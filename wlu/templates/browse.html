@@ -1,0 +1,55 @@
+<ion-view title="Check a room">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true">
+    
+  	<div>Just fill in a few details below about your room. We'll search rooms available for today for you.</div>
+
+	  <div class="list" style="margin-top: 20px;">
+	  <form>
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Building</span>
+
+	    <div>
+	    <select style="width: 95%; margin: 0 auto; margin-top: 10px;" ng-change="clearText()"  ng-model="inputs.selectedRoom" ng-options="room.name for room in rooms">
+	    </select>
+		</div>
+
+	  </label>
+
+
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Room Name</span>
+	    <input type="text" name="input" ng-model="inputs.searchText" value="BA210" placeholder="Start typing a name..."></input>
+	  </label>
+	 </form>
+	</div>
+
+
+	<b ng-if="timetable.length == 0">{{error}}</b>
+
+	<div class="list card" ng-hide="!timetable" ng-repeat="building in timetable">
+
+		<div class="item item-divider dark">   
+			<h2>{{building.name}}</h2>
+  		</div>
+
+		<div class="item" ng-repeat="time in building.times">
+			<h2>{{time.start | date: 'h:mma'}} to {{ (time.end || 'closing')  | date: 'h:mma'}}</h2>
+			<p>This room is available {{getDifference(time.start, time.end)}}.</p>
+		</div>
+
+	</div>
+
+
+	<button class="button button-full button-positive" ng-hide="pending" ng-click="getResults()">
+  		Search availability
+	</button>
+
+
+
+
+
+  </ion-content>
+</ion-view>

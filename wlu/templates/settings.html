@@ -1,0 +1,27 @@
+<ion-view title="Settings">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true">
+    
+
+	<ul class="list">
+	
+  <div class="item item-divider dark">
+    General Settings
+  </div>
+
+		<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm" ng-repeat="setting in inputs.settingsList" ng-model="x" ng-checked="setting.checked" >{{setting.text}}</ion-toggle>
+
+	</ul>
+
+          <pre ng-bind="inputs.settingsList | json"></pre> 
+
+  </div>  
+
+
+
+
+
+  </ion-content>
+</ion-view>
