@@ -22,10 +22,10 @@ LoadError)`
 
 Then, chances are you just need to run the following commands in your command prompt: 
 
-`
-gem uni hitimes
-gem ins hitimes -v 1.2.1 --platform ruby
-`
+
+`gem uni hitimes` 
+
+`gem ins hitimes -v 1.2.1 --platform ruby`
 
 ## Explanation
 
