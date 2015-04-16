@@ -5,3 +5,7 @@
 {% include css/screen.css %}
 {% include css/layout.css %}
 {% include css/syntax.css %}
+
+li {
+	margin-left: 40px;
+}

@@ -1,11 +1,22 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+You'll find some interesting projects here.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+---
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+##  Projects
+
+### OpenORPG
+
+![OpenORPG Banner](/assets/images/openorpg_banner.png)
+
+
+*OpenORPG is a ORPG multiplayer game server designed to run on the web with at least a few hundred concurrent players. It's used as a project to learn more large-scale networking and simulations, as well as practice software design.*
+
+ <a title="OpenORPG on Github" href="https://github.com/{{ site.data.theme.social.github }}/OpenORPG">
+   <i class="fa fa-github-square"></i>
+ </a>
