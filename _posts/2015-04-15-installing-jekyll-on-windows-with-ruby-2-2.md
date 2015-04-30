@@ -33,4 +33,4 @@ It would turn out that typically, there is a fat binary that is rolled into the 
 the [authour hasn't yet released](https://github.com/copiousfreetime/hitimes/issues/40) a [fat binary](http://en.wikipedia.org/wiki/Fat_binary) for it yet. Basically, there is no Windows support.
 Running the above code, we'll get around the issue until hitimers has an update.
 
-[(Credit to this Stackoverflow answer for the solution.](http://stackoverflow.com/questions/28985481/hitimes-require-error-when-running-jekyll-serve-on-windows-8-1)
+[(Credit to this Stackoverflow answer for the solution.](http://stackoverflow.com/questions/28985481/hitimes-require-error-when-running-jekyll-serve-on-windows-8-1))

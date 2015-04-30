@@ -2,4 +2,5 @@
 highlighter: rouge
 url: http://vaughanhilts.me
 lsi: false
+description: "Blogging about technology, software, .NET and other cool things"
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
