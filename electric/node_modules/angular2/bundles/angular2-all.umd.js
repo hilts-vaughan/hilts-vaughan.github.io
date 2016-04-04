@@ -13918,7 +13918,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (Zone['wtfZoneSpec']) {
 	                this.inner = this.inner.fork(Zone['wtfZoneSpec']);
 	            }
-	            if (trace) {
+	            if (trace && Zone['longStackTraceZoneSpec']) {
 	                this.inner = this.inner.fork(Zone['longStackTraceZoneSpec']);
 	            }
 	            this.inner = this.inner.fork({
