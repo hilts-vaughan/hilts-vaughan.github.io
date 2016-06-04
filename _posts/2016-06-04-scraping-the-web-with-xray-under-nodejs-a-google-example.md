@@ -6,7 +6,7 @@ categories:
 ---
 
 I recently was working on a project for a client that required going through some
-data on the web and extracting some information, known in most cicles as [data scraping](https://en.wikipedia.org/wiki/Data_scraping).
+data on the web and extracting some information, known in most circles as [data scraping](https://en.wikipedia.org/wiki/Data_scraping).
 Normally when I need to do something like this, I will use [`Cheerio`](https://github.com/cheeriojs/cheerio) alongside something like [`Superagent`](https://github.com/visionmedia/superagent) or just [`request`](https://github.com/request/request) to download pages and then extract information with a jQuery-like API. This is normally great for dealing with single pages or a list of similar pages that I want to get information from. For example, consider scraping some Wikipedia articles from a known list. Then, we can just run requests to grab the HTML contents and then use Cheerio to pick out what we want. However, I had some extra requirements on this project that made this approach not as straight-forward:
 
   * I needed to be able follow links on pages given some criteria and then easily
@@ -26,7 +26,7 @@ Normally when I need to do something like this, I will use [`Cheerio`](https://g
 
 # Setting Up
 
-Getting started is pretty easy, just download the package using npm:
+Getting started is pretty easy, just download the package using `npm`:
 
 `npm install x-ray@2.0.2 --save`
 
@@ -139,4 +139,4 @@ Cool! We could evidently extract more information from the pages if we needed to
 
 # Conclusion
 
-So, if you have some requirements that I had -- you should defintely check out X-Ray. Specifically, if you need pagination, easy robust requests, rate limiting and a nice execution flow you will get it here. 
+So, if you have some requirements that I had -- you should definitely check out X-Ray. Specifically, if you need pagination, easy robust requests, rate limiting and a nice execution flow you will get it here.
