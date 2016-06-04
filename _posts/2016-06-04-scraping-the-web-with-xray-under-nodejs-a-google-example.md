@@ -125,7 +125,7 @@ We'd have to write a lot of boilerplate spaghetti to do this without our framewo
 if we then go ahead and print out of some this using a basic loop, (printing title and link URLs for now), we get something like:
 
 ```
-atch Spice and Wolf Anime Episodes Streaming on FUNimation :::: http://www.funimation.com/loadModal/index/forgot_password_modal
+Watch Spice and Wolf Anime Episodes Streaming on FUNimation :::: http://www.funimation.com/loadModal/index/forgot_password_modal
 Spice & Wolf Wiki - Wikia :::: http://spiceandwolf.wikia.com/#WikiaArticle
 http://www.google.com/ :::: https://www.youtube.com/watch%3Fv%3DI4Ztnt5ej20#
 Ookami to Koushinryou (Spice and Wolf) - MyAnimeList.net :::: http://myanimelist.net/
