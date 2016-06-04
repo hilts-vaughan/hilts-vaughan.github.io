@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Setting up zeroRPC on Windows
+title: Setting up zeroRPC on Windows with Node.js
 categories:
 - blog
 ---
@@ -37,6 +37,11 @@ If you are using an older box like I was with some other installs and an older v
 ```
 npm install -g --msvs_version=2015 node-gyp rebuild
 ```
+
+# Python Bindings
+
+zeroRPC is usually used to talk and communicate with other applications. If you plan on using the Python version and you are running Windows, you will likely find this link at Stackoverflow
+a neccessity, as I did: http://stackoverflow.com/questions/13395458/how-to-install-zerorpc-python-on-windows/28386060#28386060
 
 # And that should be it...
 
