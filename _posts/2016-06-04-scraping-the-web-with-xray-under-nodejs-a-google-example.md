@@ -139,4 +139,4 @@ Cool! We could evidently extract more information from the pages if we needed to
 
 # Conclusion
 
-So, if you have some requirements that I had -- you should definitely check out X-Ray. Specifically, if you need pagination, easy robust requests, rate limiting and a nice execution flow you will get it here.
+So, if you have some requirements that I had -- you should definitely check out X-Ray. Specifically, if you need pagination, easy robust requests, rate limiting and a nice execution flow you will get it here. If you want to see an example of this code and chaining requests, you can find it on my [Github page](https://github.com/hilts-vaughan/x-ray-google).
