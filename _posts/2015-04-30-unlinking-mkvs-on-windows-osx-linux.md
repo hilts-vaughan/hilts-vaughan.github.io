@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Unlinking MKVs on Windows, OSX, and Linux
 categories:
 - blog
@@ -31,7 +32,7 @@ With any luck, just a bit of waiting will be all that is required to have your f
 
 * Fix Audio/Fix Video: These will transcode the video into a new format. This isn't really reccomended and only required in a few cases. The unlinking will take a long time and you will lose some quality.
 * Fix subtitles: If the subtitles don't appear in the finished product, try ticking this.
-* Ignore default flag: Same as above, try ticking this. 
+* Ignore default flag: Same as above, try ticking this.
 * Ignore missing segments: You can use this if you're sure you want to skip missing segments
 * Verbose Output: You should use this mode when attaching a log for a bug report, will include important developer information
 

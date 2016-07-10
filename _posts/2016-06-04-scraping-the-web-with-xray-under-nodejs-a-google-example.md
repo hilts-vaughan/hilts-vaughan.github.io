@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Scraping the web with X-Ray utilizing Node.js - An example using Google
 categories:
 - blog

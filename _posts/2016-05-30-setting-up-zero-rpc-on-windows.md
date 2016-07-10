@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Setting up zeroRPC on Windows with Node.js
 categories:
 - blog

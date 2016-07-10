@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Installing Jekyll on Windows with Ruby 2.2.2
 categories:
 - blog
@@ -20,10 +21,10 @@ If you receive the following error when trying to run `jekyll serve`:
 `C:/Ruby22/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in 'require': cannot load such file -- hitimes/hitimes (
 LoadError)`
 
-Then, chances are you just need to run the following commands in your command prompt: 
+Then, chances are you just need to run the following commands in your command prompt:
 
 
-`gem uni hitimes` 
+`gem uni hitimes`
 
 `gem ins hitimes -v 1.2.1 --platform ruby`
 
