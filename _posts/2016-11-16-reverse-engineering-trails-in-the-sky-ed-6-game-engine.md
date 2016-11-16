@@ -18,7 +18,7 @@ provided by the game. I'll be doing this all on Arch Linux with the aid of a Win
 
 The first thing we should do when examining a piece of software we want to decompile is to see what we have to work with and what seems interesting. I'm going to work with Trails in the Sky (FC) in this case but the sequel shares a lot of traits it would seem. After installing the game from the Steam client, I entered the directory and ran a quick `ls` to figure out what I had to work with.
 
-```touma@setsuna:common/Trails in the Sky FC $ ls -la
+<pre>touma@setsuna:common/Trails in the Sky FC $ ls -la
 total 1986388
 drwxr-xr-x  5 touma touma      4096 Oct 20 23:19 .
 drwxr-xr-x 10 touma touma      4096 Nov  5 20:43 ..
@@ -85,7 +85,7 @@ drwxr-xr-x  2 touma touma      4096 Nov  5  2015 dll
 -rw-r--r--  1 touma touma 176822844 Nov  5  2015 ed6_op.avi
 -rwxr-xr-x  1 touma touma   2019776 Feb  7  2016 ed6_win.exe
 -rw-r--r--  1 touma touma    215120 Feb  7  2016 steam_api.dll
--rw-r--r--  1 touma touma     81768 Nov 27  2015 xinput1_3.dll```
+-rw-r--r--  1 touma touma     81768 Nov 27  2015 xinput1_3.dll</pre>
 
 ----------
 There's a few interesting files in here for sure, but the one we'll cover first off are the *ED6_DTXX.(DAT|DIR)* files as they're the most interesting to us off a glance. Looking at the file size, it looks like these are probably archives for a bunch of game files. The `DIR` files also sound like a case of some kind of [virtual filesystem](https://en.wikipedia.org/wiki/Virtual_file_system).
@@ -110,7 +110,7 @@ With that, let's dive deep...
 
 Let's take a look at what we would get from unpacking:
 
-```touma@setsuna:~/unpacked $ find . -name "*.png*" | grep -E -o "ED6_DT.." | sort | uniq
+<pre>touma@setsuna:~/unpacked $ find . -name "*.png*" | grep -E -o "ED6_DT.." | sort | uniq
 ED6_DT06
 ED6_DT07
 ED6_DT09
@@ -126,7 +126,7 @@ ED6_DT33
 ED6_DT35
 ED6_DT36
 ED6_DT3A
-ED6_DT3C```
+ED6_DT3C</pre>
 
 ---------------
 
@@ -136,11 +136,11 @@ some interest things but what we can start with is `ED6_DT07/CH00000.png` which 
 Let's get some metrics on these files:
 
 
-```touma@setsuna:unpacked $ file CH00000.png
+<pre>touma@setsuna:unpacked $ file CH00000.png
 CH00000.png: PNG image data, 256 x 16384, 8-bit/color RGBA, non-interlaced
 touma@setsuna:unpacked $ file CH00000._CH
 CH00000._CH: data
-touma@setsuna:unpacked $ ```
+touma@setsuna:unpacked $ </pre>
 
 ------------------
 
@@ -161,11 +161,11 @@ We can keep this in mind when examining the file.
 
 OK, next up... let's dump the metadata and see what we can gleam on first glance. Most files start with a header, so let's begin there to see what we can see:
 
-```touma@setsuna:unpacked/ED6_DT07 $ hexdump CH00000P.SCP | head -n 4
+<pre>touma@setsuna:unpacked/ED6_DT07 $ hexdump CH00000P.SCP | head -n 4
 0000000 0040 ffff ffff ffff ffff ffff ffff ffff
 0000010 ffff ffff ffff ffff ffff ffff ffff ffff
 *
-00000b0 0000 0001 ffff ffff ffff ffff ffff ffff```
+00000b0 0000 0001 ffff ffff ffff ffff ffff ffff</pre>
 
 OK, let's keep in mind that list from before. I would expect a number of frames to be near the start of a file if it was going to be declared because it's easy to read immediately and determine how many frame blocks in this file may potentially follow. `0x004` is interesting immediately because it is 64 in decimal -- remember "16384" from the height? Pick your favourite calculator -- I use the Python IDLE / REPL and compute 16384/256 ... which is 64, which would make sense. So, our first 8-bit block here is clearly the number of frames (note: there is no rigorous proof for this -- it's an assumption I've made given the information available to me. Disassembly would be the only way to know for sure.)
 
@@ -182,7 +182,8 @@ We can navigate a tree of data in semantic blocks that make sense to us rather t
 
 And you have to pay for a lot of them. So, what would a definition for this look like?
 
-```meta:
+<pre>
+meta:
   id: scp
   application: TiTS Engine - Sprite Format
   endian: le
@@ -195,7 +196,7 @@ types:
       - id: frame_count
         type: u1
       - id: magic_zero
-        contents: [0]```
+        contents: [0]</pre>
 
 ---------------------
 
@@ -219,13 +220,13 @@ Then, there's the rest of these huge blocks of data. If we load this into a hex 
 
 If we run `find . -name "*.png*" | xargs file {}` we'll notice a lot of 256 wide PNG files. Actually, all of them in this folder seem to be like this. Furthermore, if we run our `ksv` tool and markup against some of these `SCP` files all their frame counts seem to match the heights, for example a small output:
 
-```./CH01593.png: PNG image data, 256 x 2048, 8-bit/color RGBA, non-interlaced
+<pre>./CH01593.png: PNG image data, 256 x 2048, 8-bit/color RGBA, non-interlaced
 ./CH00435.png: PNG image data, 256 x 8192, 8-bit/color RGBA, non-interlaced
 ./CH01033.png: PNG image data, 256 x 2048, 8-bit/color RGBA, non-interlaced
 ./CH02280.png: PNG image data, 256 x 16384, 8-bit/color RGBA, non-interlaced
 ./CH02130.png: PNG image data, 256 x 16384, 8-bit/color RGBA, non-interlaced
 ./CH00128.png: PNG image data, 256 x 14848, 8-bit/color RGBA, non-interlaced
-...```
+...</pre>
 
 OK, probably safe to assume that this data is hard-coded into the game engine somewhere and not stored here. Or it's stored somewhere else.
 
@@ -233,7 +234,7 @@ That leaves us with a large file with some sparse data, though. When you see a l
 
 `stat` the file to get a size and get started. i.e: `stat CH00000P.SCP` to get a size of 32770, in bytes. Now, it's time to think.. if there was a record for each frame, how big would each record have to be? (32770-2)/64 in this case (remember: we sliced off two bytes for the header) which is a nice, round, 512. Remember `CH01593` above? If we `state` this file we get 4098.. if we use the same logic then we get (4098-2)/8 = 512. It's likely, but maybe not completely true, that we are looking at 512 byte records if we follow this train of thought. Let's draft it out in Kaitai Struct and see what it would look like:
 
-```meta:
+<pre>meta:
   id: scp
   application: TiTS Engine - Sprite Format
   endian: le
@@ -260,8 +261,9 @@ types:
         repeat: expr
         repeat-expr: 4
       - id: junk2
-        size: 334
-```
+        size: 334</pre>
+
+----------------
 
 A couple new syntax elements here. The most important in my opinion is the `repeat: eos` which is just saying create `frame_entries` until the file ends. This makes sense since we asserted that after the header, it would be all frame data. I have filled in some `junk` and  `data` fields which might not make sense right now but they will once we load things up in `ksv`. I arrived at these offsets through dumping and examination but it will be more obvious where they come from once you load it up...
 
