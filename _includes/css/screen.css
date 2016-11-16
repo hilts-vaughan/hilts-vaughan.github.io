@@ -120,6 +120,11 @@ nav h1, nav h2 {
   font-size: 13px;
 }
 
+#post img {
+  width: 100%;
+  overflow: hidden;
+}
+
 #post pre {
   border: 1px solid #ddd;
   background-color: #eef;
@@ -133,10 +138,12 @@ nav h1, nav h2 {
 }
 
 #post code {
-  border: 1px solid #ddd;
   background-color: #eef;
   font-size: 85%;
   padding: 0 .2em;
+  white-space: pre;
+  line-height: 0px;
+  margin-bottom: 3em;
 }
 
 #post pre code {

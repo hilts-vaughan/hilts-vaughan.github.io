@@ -1,5 +1,5 @@
 # General Jekyll Config
-highlighter: rouge
+highlighter: none
 url: http://vaughanhilts.me
 lsi: false
 description: "Blogging about technology, software, .NET and other cool things"
