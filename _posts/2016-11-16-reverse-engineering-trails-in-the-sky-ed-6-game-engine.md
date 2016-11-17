@@ -221,7 +221,7 @@ A couple of notes of other notes:
 2. We declared the frame_count as 8-bits and then some "magic zero" afterwards which we state is always zero. This very well could be
 some 16-bit number so that frame counts can exceed 2^8... but we're not sure on that yet without looking at more files so we play this safe.
 
-Then, there's the rest of these huge blocks of data. If we load this into a hex editor or just use  `hexdump` we see a lot of `FF` indiciating empty space in the file. It would be unlikely for a header be padded with a huge amount of `FF` so we can assume that perhaps the header is just 2 bytes long. Hm... looks like no frame height or width information? It seems unlikely that it's encoded here.
+Then, there's the rest of these huge blocks of data. If we load this into a hex editor or just use  `hexdump` we see a lot of `FF` indicating empty space in the file. It would be unlikely for a header be padded with a huge amount of `FF` so we can assume that perhaps the header is just 2 bytes long. Hm... looks like no frame height or width information? It seems unlikely that it's encoded here.
 
 If we run `find . -name "*.png*" | xargs file {}` we'll notice a lot of 256 wide PNG files. Actually, all of them in this folder seem to be like this. Furthermore, if we run our `ksv` tool and markup against some of these `SCP` files all their frame counts seem to match the heights, for example a small output:
 
@@ -237,7 +237,7 @@ OK, probably safe to assume that this data is hard-coded into the game engine so
 
 That leaves us with a large file with some sparse data, though. When you see a lot of sparse data like this, you should think [fixed length records](http://www.cs.sfu.ca/CourseCentral/354/zaiane/material/notes/Chapter10/node15.html) ... and I bet some frame data is encoded in these records. However, we should verify that this seems plausible and where it starts and ends.
 
-`stat` the file to get a size and get started. i.e: `stat CH00000P.SCP` to get a size of 32770, in bytes. Now, it's time to think.. if there was a record for each frame, how big would each record have to be? (32770-2)/64 in this case (remember: we sliced off two bytes for the header) which is a nice, round, 512. Remember `CH01593` above? If we `stat` this file we get 4098.. if we use the same logic then we get (4098-2)/8 = 512. It's likely, but maybe not completely true, that we are looking at 512 byte records if we follow this train of thought. Let's draft it out in Kaitai Struct and see what it would look like:
+`stat` the file to get a size and get started. i.e: `stat CH00000P.SCP` to get a size of 32770, in bytes. Now, it's time to think.. if there was a record for each frame, how big would each record have to be? (32770-2)/64 in this case (remember: we sliced off two bytes for the header) which is a nice, round, 512. Remember `CH01593` above? If we `stat` this file we get 4098... if we use the same logic then we get (4098-2)/8 = 512. It's likely, but maybe not completely true, that we are looking at 512 byte records if we follow this train of thought. Let's draft it out in Kaitai Struct and see what it would look like:
 
 <pre>meta:
   id: scp
