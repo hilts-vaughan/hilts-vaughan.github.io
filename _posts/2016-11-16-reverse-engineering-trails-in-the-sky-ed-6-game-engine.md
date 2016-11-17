@@ -90,13 +90,13 @@ drwxr-xr-x  2 touma touma      4096 Nov  5  2015 dll
 ----------
 There's a few interesting files in here for sure, but the one we'll cover first off are the *ED6_DTXX.(DAT|DIR)* files as they're the most interesting to us off a glance. Looking at the file size, it looks like these are probably archives for a bunch of game files. The `DIR` files also sound like a case of some kind of [virtual filesystem](https://en.wikipedia.org/wiki/Virtual_file_system).
 
-For those who were not familar for the reason this is done, it's a very popular strategy in PC and console games. You can read a great answer on the Game Development Stack Exchange [right here](http://gamedev.stackexchange.com/a/20248/17541). To briefly summarize:
+For those who were not familiar for the reason this is done, it's a very popular strategy in PC and console games. You can read a great answer on the Game Development Stack Exchange [right here](http://gamedev.stackexchange.com/a/20248/17541). To briefly summarize:
 
 1. Faster loading times since there's less seek
 2. Full control of data, no OS
 3. Compression can be more effective, especially if data is packed tightly
 
-A few Google queries reveals that the company who orignally developed the game, FALCOM, has been known to use a specific archive format for a while and thery are well known decompression programs available. Unfortunately, I was not be able to find much in the way of documentation. One of interest for us in particular is the "Falcom Data Archive Conversion Utility", or just [falcnvrt](http://www.pokanchan.jp/dokuwiki/software/falcnvrt/start) for short.
+A few Google queries reveals that the company who originally developed the game, FALCOM, has been known to use a specific archive format for a while and there are well known decompression programs available. Unfortunately, I was not be able to find much in the way of documentation. One of interest for us in particular is the "Falcom Data Archive Conversion Utility", or just [falcnvrt](http://www.pokanchan.jp/dokuwiki/software/falcnvrt/start) for short.
 
 As it would turn out, this application can decompress the DAT files into directories:
 
@@ -144,9 +144,12 @@ touma@setsuna:unpacked $ </pre>
 
 ------------------
 
-The latter is not very interesting but the former has some information to use in the way of sizing that would be informative to us. Using a little bit of knowledge of spritesheets we can guess that each frame is 256x256. However, let's just load it up in an image editor to see if this is true...
+The latter is not very interesting but the former has some information to use in the way of sizing that would be informative to us. Using a little bit of knowledge of spritesheets we can guess that each frame is 256x256. This is because often in video games we use textures and sub textures that are powers of two and square because traditionally, GPUs can render these kinds of textures better and more efficiently. There's no science to this guess then aside from some educated guesses.
+
+Let's verify this claim by loading it up into an image editor and setting some grids. I will be using Photoshop as it is a tool I am familiar with but you could really use anything that you have handy. By setting up sub-grids of 256x256 across the entire sprite sheet, we can visually determine if the spritesheet would have a high likelihood of satisfying our guess.
 
 ![estelle](/assets/posts/re/trails_001/estelle.png)
+*The above is done by using Photoshop "Grid & Slices" set to 256x256 to visualize the boundaries.*
 
 Yep, the frames seem to fit snuggly.
 
@@ -159,6 +162,8 @@ Before going forward, it helps to know characteristics of the file we are attack
 
 We can keep this in mind when examining the file.
 
+# Extracting metadata
+
 OK, next up... let's dump the metadata and see what we can gleam on first glance. Most files start with a header, so let's begin there to see what we can see:
 
 <pre>touma@setsuna:unpacked/ED6_DT07 $ hexdump CH00000P.SCP | head -n 4
@@ -169,9 +174,9 @@ OK, next up... let's dump the metadata and see what we can gleam on first glance
 
 OK, let's keep in mind that list from before. I would expect a number of frames to be near the start of a file if it was going to be declared because it's easy to read immediately and determine how many frame blocks in this file may potentially follow. `0x004` is interesting immediately because it is 64 in decimal -- remember "16384" from the height? Pick your favourite calculator -- I use the Python IDLE / REPL and compute 16384/256 ... which is 64, which would make sense. So, our first 8-bit block here is clearly the number of frames (note: there is no rigorous proof for this -- it's an assumption I've made given the information available to me. Disassembly would be the only way to know for sure.)
 
-We should record this information. If you're trying to follow along, you might consider installing [Kaitai Struct](http://kaitai.io/) now as I will be using it to browse data. However. you can record your notes in whatever you want -- including markdown. I use Kaitai Struct because the visualizer allows me to view my assumptions and visualize the hexdump in a DSL that makes it easy to browse and test definitions. Then, when it comes time to import them into a programming language to manipulate, the compiler can take the DSL and generate an object definition for most major programming languages I use on a daily-basis. This makes it easy to interact with my new model.
+We should record this information. If you're trying to follow along, you might consider installing [Kaitai Struct](http://kaitai.io/) now as I will be using it to browse data. However, you can record your notes in whatever you want -- including markdown. I use Kaitai Struct because the visualizer allows me to view my assumptions and visualize the hexdump in a DSL that makes it easy to browse and test definitions. Then, when it comes time to import them into a programming language to manipulate, the compiler can take the DSL and generate an object definition for most major programming languages I use on a daily-basis. This makes it easy to interact with my new model.
 
-You may also be interested in browsing the [wiki here](https://github.com/kaitai-io/kaitai_struct/wiki) to be briefly familar, though this is not required as all definitions are provided.
+You may also be interested in browsing the [wiki here](https://github.com/kaitai-io/kaitai_struct/wiki) to be briefly familiar, though this is not required as all definitions are provided.
 
 So, here's what our notes will look like for the `sprite.yml` that we will create. This will be a definition file that is used by the Kaitai Struct Compiler and the Visualizer. By writing our notes and observations of the game data inside of Kaitai Struct, we gain the ability to visualize it quickly. For example, here is what we're aiming to build here:
 
@@ -232,7 +237,7 @@ OK, probably safe to assume that this data is hard-coded into the game engine so
 
 That leaves us with a large file with some sparse data, though. When you see a lot of sparse data like this, you should think [fixed length records](http://www.cs.sfu.ca/CourseCentral/354/zaiane/material/notes/Chapter10/node15.html) ... and I bet some frame data is encoded in these records. However, we should verify that this seems plausible and where it starts and ends.
 
-`stat` the file to get a size and get started. i.e: `stat CH00000P.SCP` to get a size of 32770, in bytes. Now, it's time to think.. if there was a record for each frame, how big would each record have to be? (32770-2)/64 in this case (remember: we sliced off two bytes for the header) which is a nice, round, 512. Remember `CH01593` above? If we `state` this file we get 4098.. if we use the same logic then we get (4098-2)/8 = 512. It's likely, but maybe not completely true, that we are looking at 512 byte records if we follow this train of thought. Let's draft it out in Kaitai Struct and see what it would look like:
+`stat` the file to get a size and get started. i.e: `stat CH00000P.SCP` to get a size of 32770, in bytes. Now, it's time to think.. if there was a record for each frame, how big would each record have to be? (32770-2)/64 in this case (remember: we sliced off two bytes for the header) which is a nice, round, 512. Remember `CH01593` above? If we `stat` this file we get 4098.. if we use the same logic then we get (4098-2)/8 = 512. It's likely, but maybe not completely true, that we are looking at 512 byte records if we follow this train of thought. Let's draft it out in Kaitai Struct and see what it would look like:
 
 <pre>meta:
   id: scp
