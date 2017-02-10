@@ -35,7 +35,7 @@ replace#global#no-ssl3-method#zlib
 replace#global#no-ssl3#zlib
 ```
 
-3. Then, just do a system update or just reinstall SSL (`yaourt -S opeensl`). You should see the diff shown and be able to just continue installing with support.
+3. Then, just do a system update or just reinstall SSL (`yaourt -S openssl`). You should see the diff shown and be able to just continue installing with support.
 4. If this fails, you may need to install the `gpg` key for the package, i.e: `gpg --recv-keys D9C4D26D0E604491`
 5. Once the build is finished (took a couple minutes on my i5 2500) you should have SSLv3 support
 
