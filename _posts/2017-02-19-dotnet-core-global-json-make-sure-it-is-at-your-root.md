@@ -12,6 +12,8 @@ As it would turn out, it would seem that in .NET Core 1.1 had migrated to kill o
 
 The fix is simple: just add a `global.json` specifying your SDK version. Or it would be, anyway if your file structure was that your app was at the root of the repo. Alas, that was not me so I got the above error message over and over.
 
-The solution was to simply drop `global.json` into the root directory of my application folder. Bam, everything worked.
+The solution was to simply drop `global.json` into the root directory of my source control folder (and not in 
+the same directory as the application). Bam, 
+everything worked.
 
 I hope this helps someone out.
