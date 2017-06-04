@@ -28,7 +28,15 @@ is generally actually a bad idea since OpenSSL often has security vulnerabilitie
 sudo nano /etc/customizepkg.d/openssl
 ```
 
-and then put the following contents...
+**NOTICE / EDIT: ** It has come to my attention after upgrading my Arch Linux box, that the OpenSSL v1 has been replaced with OpenSSL v1 Compatability library from the AUR. So first of all, make sure [you have this package.](https://aur.archlinux.org/packages/libopenssl-1.0-compat/). Secondly, make sure you edit the the `libopenssl-1.0-compat` file instead, i.e:
+
+```
+sudo nano /etc/customizepkg.d/libopenssl-1.0-compat
+```
+
+instead.... continue on. :)
+
+and then put the following contents into the above file (most likely the compatabiltiy file if you are reading this on an updated system post June 2017)...
 
 ```
 replace#global#no-ssl3-method#zlib
