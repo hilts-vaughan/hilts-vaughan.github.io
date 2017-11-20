@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Misc Development Tip: Move through blocks of text faster by simply increasing key repeat rate
+title: Misc Development Tip - Move through blocks of text faster by simply increasing key repeat rate
 categories:
 - blog
 ---
