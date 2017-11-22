@@ -6,6 +6,8 @@ categories:
 - blog
 ---
 
+**NOTICE: As of .NET Core 2, this is no longer a problem. If you can upgrade your project and you were considering it already, you might as well do it to avoid this problem if you are having it.**
+
 I was recently working on a project for a client and was trying to use the new .NET Core technology by Microsoft. Of course, this is not a supported platform for my operating system of choice. However, that did not stop me from trying to run with it.
 
 A lot of stuff works but Entity Framework does not out of the box. You will get the following error trying to run a query:
