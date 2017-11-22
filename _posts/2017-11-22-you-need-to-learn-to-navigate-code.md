@@ -25,13 +25,7 @@ These are some things you need to learn to use, else you are severely missing ou
 
    ​
 
-2. **Go to file / class**. This is also a big one that I see a lot of people use already and it is rare that I do not see someone use it. Hunting for a single class or file in your structure is painful and could require dozens of seconds to get right, depending on how large your project is. `Ctrl + Shift + F` is not the right answer ==  instead, use something like `Ctrl + P` in Atom or `Ctrl + O` in Jetbrains IDEs. 
-
-   You get something like this:
-
-   ![https://www.jetbrains.com/help/img/idea/2017.2/gotoFile.png]()
-
-   ... and now you get somethign that can help you find a file very quickly.
+2. **Go to file / class**. This is also a big one that I see a lot of people use already and it is rare that I do not see someone use it. Hunting for a single class or file in your structure is painful and could require dozens of seconds to get right, depending on how large your project is. `Ctrl + Shift + F` is not the right answer ==  instead, use something like `Ctrl + P` in Atom or `Ctrl + O` in Jetbrains IDEs. ... and now you get something that can help you find a file very quickly.
 
 3. **If your tooling supports it, learn your quick navigation tools such as "Go to class" or "Go to definition" when you have a word selected.** Visual Studio Code has good support for this.
 
