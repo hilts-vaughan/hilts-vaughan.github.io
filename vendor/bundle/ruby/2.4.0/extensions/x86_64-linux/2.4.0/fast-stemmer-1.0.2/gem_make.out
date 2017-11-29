@@ -1,0 +1,16 @@
+current directory: /home/touma/repos/hilts-vaughan.github.io/vendor/bundle/ruby/2.4.0/gems/fast-stemmer-1.0.2/ext
+/usr/bin/ruby -r ./siteconf20171128-2914-p6rzz9.rb extconf.rb
+creating Makefile
+
+current directory: /home/touma/repos/hilts-vaughan.github.io/vendor/bundle/ruby/2.4.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR=" clean
+
+current directory: /home/touma/repos/hilts-vaughan.github.io/vendor/bundle/ruby/2.4.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR="
+compiling porter.c
+compiling porter_wrap.c
+linking shared-object stemmer.so
+
+current directory: /home/touma/repos/hilts-vaughan.github.io/vendor/bundle/ruby/2.4.0/gems/fast-stemmer-1.0.2/ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 stemmer.so ./.gem.20171128-2914-1c4cw0r
