@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Guide and Remarks: Playing Trails of Cold Steel I && II on Linux using WINE
+title: Playing Trails of Cold Steel I && II on Linux using WINE
 categories:
 - blog
 ---

@@ -1,12 +1,17 @@
 ---
 layout: post
 comments: true
-title: Guide and Remarks: Playing Trails of Cold Steel I && II on Linux using WINE
+title: Steam hanging when clicking "Login" on WINE Stagingv
 categories:
 - blog
 ---
 
 # Steam hanging when clicking "Login" on WINE Staging
+
+```shell
+touma@setsuna:repos/hilts-vaughan.github.io ‹master›$ wine --version
+wine-2.21 (Staging)
+```
 
 I was installing Steam in WINE to play a game. I'm not sure if this is a recent problem or not but I was installing WINE and ran Steam, punched in my credentials, hit "Login" and then expected the Steam Guard.
 
