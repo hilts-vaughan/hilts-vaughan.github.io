@@ -77,7 +77,7 @@ winetricks quartz
 winetricks xvid
 ````
 
-That should be everything. You can go ahead and then start Steam if you have not already (you need to use `wine Steam.exe -no-cef-sandbox` to do this, inside the steam folder), login and start installing Cold Steel. If you have problems with Steam hanging on login (you hopefully will not), you can check out this other post I **wrote on the topic** which is not documented very well on the web. 
+That should be everything. You can go ahead and then start Steam if you have not already (you need to use `wine Steam.exe -no-cef-sandbox` to do this, inside the steam folder), login and start installing Cold Steel. If you have problems with Steam hanging on login (you hopefully will not), you can check out this other post I **[wrote on the topic**]({{ site.baseurl }}{% post_url 2018-02-16-steam-hanging-on-clicking-login-wine-staging %}) which is not documented very well on the web. 
 
 ## Step 3: Configuring Cold Steel, and then running it
 

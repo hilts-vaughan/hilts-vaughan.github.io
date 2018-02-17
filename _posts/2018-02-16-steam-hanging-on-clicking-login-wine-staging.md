@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Steam hanging when clicking "Login" on WINE Stagingv
+title: Steam hanging when clicking "Login" on WINE Staging
 categories:
 - blog
 ---
