@@ -18,7 +18,7 @@ I purchased on Steam version but since they are reported to all be DRM free this
 
 **Install WINE**
 
-You need a copy of WINE Staging to get started. Depending on your distribution, you might have to find it elsewhere. I'm on Arch Linux, so you can `yaourt` to get it there if you're like me, `yaourt -S wine-staging` (or Pacman since apparently it's not a AUR package). 
+You need a copy of WINE Staging (or Wine 3.2 that has CSMT enabled by default if your distro is up to date) to get started. Depending on your distribution, you might have to find it elsewhere. I'm on Arch Linux, so you can `yaourt` to get it there if you're like me, `yaourt -S wine-staging` (or Pacman since apparently it's not a AUR package). 
 
 If your distro makes it hard to get a copy of WINE Staging (I tested on 2.21) then you can install [PlayOnLinux](https://www.playonlinux.com/en/) or [Lutris](https://lutris.net/)  which provide local copies of different versions of WINE outside of the system version. Once it's installed, run:
 
@@ -45,7 +45,7 @@ and this should generate a new `~.wine` for you. You should go check. If you do 
 If you do not have this option, either:
 
 * You're not running Wine Staging, make sure your version is as such (for example, make sure you are running the right wine configuration for the proper version)
-* They have merged the CSMT patches. At the time of writing this, this is not true.
+* They have merged the CSMT patches and you're using WINE 3.2+ (which has this enabled by default -- yay!)
 
 We will also be using [winetricks](https://github.com/Winetricks/winetricks) -- your distro should have it somewhere or you can follow the manual instructions [here](https://wiki.winehq.org/Winetricks#Getting_winetricks). It should be fairly simple to get. 
 
@@ -66,6 +66,10 @@ winetricks vcrun2015
 ```
 
 .. one of these failed but it didn't matter. Or it was one of the commands below. I think it was a package that did not exist or was typo'd. For me, it made no difference. So, don't worry about it. 
+
+After you have DSound as well installed, you will need to change the DSound library from native to builtin to avoid crackling and latency problems. You can do this in `winecfg` like we did with CSMT, you can a screenshot below. Just hit "Edit" on `dsound` to get the desired `builtin`
+
+![wine config](/assets/e712d104-1465-46ba-8b60-dbefe9d8c8a4/dsound.png)
 
 I also know from other Falcom titles that these are good to have in hand and won't hurt Cold Steel, I don't know if they are strictly needed but better safe than sorry **in this case** since all we care about is Cold Steel. If this was a shared prefix, we would have to be more careful.
 
