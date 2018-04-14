@@ -31,7 +31,7 @@ If we were going for quick and easy, we might be tempted to use a regular expres
 2. .. but because of that, you can't just search for `_` either since you're going to get way too many hits and next thing you know -- every module depends on this! Might as well have just had a `global.js` and had it declare it. 
 3. Even if you can write something to look out for the various forms, such as combing something like this:
 
-![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](some regexp attempt)
+![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png)
 
 ... you immediately notice comments are a problem. You could probably add something to parse the line as well and make sure it's not a comment. I share the same sentiment as [Jeff Atwood](https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/):
 
@@ -72,7 +72,7 @@ There's a great site called [ASTExplorer](https://astexplorer.net/) we're going 
 
 If you load up your snippet code, then you should get something like this;
 
-![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](ast explorer)
+![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/ast.png](/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/ast.png)
 
 You will notice I have some code that logs out _identifiers_. First, let's define what an identifier is and then let's look at why we care about them.
 
