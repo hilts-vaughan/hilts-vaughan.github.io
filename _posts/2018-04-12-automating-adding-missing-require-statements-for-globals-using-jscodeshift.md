@@ -31,7 +31,7 @@ If we were going for quick and easy, we might be tempted to use a regular expres
 2. .. but because of that, you can't just search for `_` either since you're going to get way too many hits and next thing you know -- every module depends on this! Might as well have just had a `global.js` and had it declare it. 
 3. Even if you can write something to look out for the various forms, such as combing something like this:
 
-![assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](some regexp attempt)
+![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](some regexp attempt)
 
 ... you immediately notice comments are a problem. You could probably add something to parse the line as well and make sure it's not a comment. I share the same sentiment as [Jeff Atwood](https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/):
 
@@ -72,7 +72,7 @@ There's a great site called [ASTExplorer](https://astexplorer.net/) we're going 
 
 If you load up your snippet code, then you should get something like this;
 
-![assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](ast explorer)
+![/assets/9dda9d4d-0de5-441d-849a-e32d10fa35db/regexp.png](ast explorer)
 
 You will notice I have some code that logs out _identifiers_. First, let's define what an identifier is and then let's look at why we care about them.
 
@@ -189,7 +189,7 @@ That should be everything. Now:
 3. Inject a require statements, checking if it already exists
 4. .. and then terminate and print out the source code
 
-Putting it all together, you get something like this:
+Putting it all together, you get something like this
 
 ```javascript
 const containsStatementAlready = (builder, statement) => {
@@ -213,9 +213,11 @@ export default function transformer(file, api) {
 }
 ```
 
-With this, you get the output we wanted! Pretty simple and you can automate most of this, with some manual code review after to make sure things weren't added in error. The best part of JSCodeShift is it's just Javascript -- so you're scripting your automation. If wanted to, you can automate entire sets of globals using something as simple as a hash map (read: Javascript Object for simplicity)
+With this, you get the output we wanted when run in **ASTExplorer**! Pretty simple and you can automate most of this, with some manual code review after to make sure things weren't added in error. Don't forget to save this as a `index.js` script and then use `jscodeshift` to run this against as a sample file locally as well -- that's where the real power comes and where you can dot this en-mass.
 
-[I actually did that right here.](https://github.com/hilts-vaughan/jscodeshift-require-globals)
+ The best part of JSCodeShift is it's just Javascript -- so you're scripting your automation. If wanted to, you can automate entire sets of globals using something as simple as a hash map (read: Javascript Object for simplicity) I'll leave running this against your entire code-base (a `zsh` glob will probably do the trick...) and for multiple global tokens an exercise.
+
+[I actually did multiple tokens right here if you need something now.](https://github.com/hilts-vaughan/jscodeshift-require-globals)
 
 I'm not sure this would be ready for a large project but it certainly should get you on the way. Most importantly, we learned a bit about what we can do with parsing an actual language that becomes a lot harder with something like a simple Regular Expression.
 
