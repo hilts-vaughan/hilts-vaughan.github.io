@@ -6,8 +6,6 @@ categories:
 - blog
 ---
 
-# Setting up Huginn on unRAID
-
 I recently became intrigued with using Huggin for a few automation tasks I had been doing manually up to this point. However, it looks like nobody to this point had bothered to really post how to set this up with unRAID. It was not too tricky since you can use **Docker** with unRAID but there were a few things that slowed me down. 
 
 I'm documenting them here for anyone else who wants to do this, can hopefully be saved some time.
