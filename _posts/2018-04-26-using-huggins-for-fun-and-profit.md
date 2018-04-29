@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Using Hugginn for profit and fun; finding price errors on the Internet
+title: Using Huginn for profit and fun; finding price errors on the Internet
 categories:
 - blog
 ---
