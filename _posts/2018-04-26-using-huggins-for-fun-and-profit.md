@@ -94,7 +94,7 @@ That's the plan. Let's figure out how to execute.
 If you had this reaction, then read the requirements below. Explicit and implicit requirements are dissected and include what complications might arise:
 
 1. **You need to make sure you only pull new posts** -- that means you need some kind of in-memory storage at the very minimum and need to write some code to track the _ID_ and only serve up in new ones into a pool. If you want fault tolerance (if your app crashes, you would lose all events) then you might even need something like _Redis_ running in persistent mode. Things just got a bit hairier.
-2. **If you want to do more than one type of alert (say, SlickDeals afterwards) ** ... then you need generalized event types. If you need more than one type of notification backend, you need to implement that.
+2. **If you want to do more than one type of alert, say, SlickDeals afterwards ** ... then you need generalized event types. If you need more than one type of notification backend, you need to implement that.
 3. **You need to implement some kind of reliable scheduler,  visualizer if you want them** This can be `cron` but now you have to manage `cron` jobs. 
 4. You need logging of events for debugging.
 5. **You need to integrate with a notification service** -- this one is bit easier. Most languages have something to do this. For example. here's one for [Node](https://www.npmjs.com/package/pushbullet). But you also have to write our own fault tolerance.
@@ -116,7 +116,7 @@ A few explanations in order:
 
 * **Scenario**: This is just a way of grouping agents together in Huginn. We're using the default one for now but it would be a good idea to group them later on so you know how they all interact with each other.
 * **Keep events**: We've picked 3 days but even less is fine. We're just using this for triggers which are near real-time, remember. However, if we had other plans for this data more would be in order.
-* **Schedule: ** 1 minute might be a bit eager, but remember we'd rather generate a bit of extra traffic than miss a deal. 
+* **Schedule **: 1 minute might be a bit eager, but remember we'd rather generate a bit of extra traffic than miss a deal. 
 * **Expected days**: You can read more on the official docs --  but this is how Huginn will notify us of broken agents. i.e: we expect data to come in here at least somewhat frequent or something is not right.
 
 With that saved, go ahead and run it and you should generate some activities in the events stream:
