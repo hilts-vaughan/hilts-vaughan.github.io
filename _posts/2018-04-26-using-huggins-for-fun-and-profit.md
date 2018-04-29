@@ -8,7 +8,7 @@ categories:
 
 ![](/assets/3b805ee5-3552-4a64-8c78-75f6ec8dcf7a/1.png)
 
-Those are not typos -- that is how much I paid for those items sometime in 2014. Those are really good deals for those items,  especially in Canadian Dollars. Most of those retail for about over $100 CAD over here.
+Those are not faked (read: _photoshopped_) -- that is how much I paid for those items sometime in 2014. Those are really good deals for those items,  especially in Canadian Dollars. Most of those retail for about over $100 CAD over here.
 
 These are all known as _price error_ items as the merchant did not intend to sell them for this much. However, sometimes logistics software screws up and there's a community of people who want to scoop up these things. 
 
