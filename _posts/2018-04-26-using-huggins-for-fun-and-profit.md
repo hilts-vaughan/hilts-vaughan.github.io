@@ -55,7 +55,7 @@ Our solution? To decouple the stream of data from the notifications and allow us
 
 If you don't have your own infrastructure, it's not a bad way to go. But let's look at alternatives using _Huginn_ to do this. I'm not going to cover the installation, so check out their [install guide](https://github.com/huginn/huginn/blob/master/doc/manual/installation.md) (I recommend Docker if you can use iti) or my install guide using [unRAID](http://vaughanhilts.me/blog/2018/04/26/setting-up-huggins-on-unraid-for-automation.html) if you want to follow along. Otherwise, time to get started.
 
->[If you don't know what Huginn is you can read more about it here.]([https://github.com/huginn/huginn](https://github.com/huginn/huginn)) It's essentially a system that allows you to pull data from various sources, aggregate it into events, query it, and then act on it. That sort of vague, right? But it's kind of exactly what we need...
+>[If you don't know what Huginn is you can read more about it here.](https://github.com/huginn/huginn) It's essentially a system that allows you to pull data from various sources, aggregate it into events, query it, and then act on it. That sort of vague, right? But it's kind of exactly what we need...
 
 # Setting up a plan
 
