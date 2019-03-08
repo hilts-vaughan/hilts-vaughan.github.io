@@ -21,7 +21,7 @@ That being said,  it's not like I like macOS. Even though [some people](https://
 
 I have a tiling window manager here. I don't have to use a clunky terminal with it's own keybindings like iTerm on macOS.  I use i3 and I won't try and sell you on the benefits, but I will say is I never have to reach for my mouse to resize random windows and everything is just fullscreen and driven by a keyboard by default. For some non-work workflows, this is a bit clunky (looking at you -- Steam) so I have GNOME for some other stuff. It's not my favourite but for getting work done, I can't beat the i3 setup.
 
-![/assets/assets/8f56a3de-7eee-4d9f-b7d9-7ee875cab677/tiling.png]()
+![](/assets/8f56a3de-7eee-4d9f-b7d9-7ee875cab677/tiling.png)
 
 [There's a nice guide for getting started here on that](https://www.youtube.com/watch?v=j1I63wGcvU4). 
 
