@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Swapping from macOS and Linux, work to home... things I miss from each each platform
+title: Swapping from macOS and Linux, work to home... things I miss from each platform
 categories:
 - blog
 ---
