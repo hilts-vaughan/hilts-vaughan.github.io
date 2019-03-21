@@ -73,7 +73,7 @@ I didn't and it took a few minutes to figure out the orientation of putting it b
 
 Success!
 
-![working](/home/touma/repos/hilts-vaughan.github.io/assets/970repair/working.jpg)
+![working](/assets/970repair/working.jpg)
 
 Who knows if it's done 100% right? But it works well. I probably should give some other stuff in the case some TLC as well.
 
