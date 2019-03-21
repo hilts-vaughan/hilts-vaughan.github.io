@@ -42,7 +42,7 @@ Of course, this was temporary. :D
 
 Sorry, I don't have packaging photos. Forgot to take some. Here's the best one I have:
 
-![fan](assets/970repair/fan.jpg)
+![fan](/assets/970repair/fan.jpg)
 
 Now, onto the steps of what I did. [I more or less followed this guide](https://www.youtube.com/watch?v=BOb4aqcMy5U).  However, I will outline some issues / things I had to do with mine that the video didn't cover.
 
