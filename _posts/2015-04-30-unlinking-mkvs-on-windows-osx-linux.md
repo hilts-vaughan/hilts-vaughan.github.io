@@ -16,7 +16,7 @@ I developed a full GUI interface overtop that can be used by anyone to solve thi
 
 # Using UnlinkMKV-GUI
 
-It's a portable application running on the .NET Framework / Mono, you can grab the latest release [here](https://github.com/hilts-vaughan/UnlinkMKV-GUI/releases) and read the setup requirements [here](https://github.com/hilts-vaughan/UnlinkMKV-GUI/blob/master/README.md) for your operating system. Setup basically boils down to having Mono, a working Perl install, and MkxToolNix. If you know you have these already, you can move along. Otherwise, feel free to follow the guide for your operating system in the README.
+It's a portable application running on the .NET Framework / Mono, you can grab the latest release [here](https://github.com/hilts-vaughan/UnlinkMKV-GUI/releases) and read the setup requirements [here](https://github.com/hilts-vaughan/UnlinkMKV-GUI/blob/master/README.md) for your operating system. Setup basically boils down to having Mono, a working Perl install, and MKVToolNix. If you know you have these already, you can move along. Otherwise, feel free to follow the guide for your operating system in the README.
 
 If you're on OSX or Linux, after downloading the release you can just run it with `mono UnlinkMKV-GUI.exe`
 
