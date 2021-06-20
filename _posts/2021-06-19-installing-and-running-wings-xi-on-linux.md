@@ -99,6 +99,7 @@ sed -i 's/C:\\Users\\alexs\\Desktop\\Installer Package\\Ashita\\ffxi-bootmod\\po
 To run the game, you can use the following command:
 
 ```
+cd ~/.wine-wingsxi-64/drive_c/WingsXI/Ashita/
 WINEPREFIX=~/.wine-wingsxi-64 wine ~/.wine-wingsxi-64/drive_c/WingsXI/Ashita/injector.exe "New Configuration 1.xml"
 ```
 
