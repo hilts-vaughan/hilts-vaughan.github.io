@@ -89,7 +89,7 @@ From this point, you can click through the prompts and you should get:
 It should complete without trouble. Next, unfortunately WingsXI bundled with an installer that does not setup the path to the boot command by default. We can fix this with a quick `sed` replacement, so go ahead and run this:
 
 ```
-sed -i 's/C:\\Users\\alexs\\Desktop\\Installer Package\\Ashita\\ffxi-bootmod\\pol.exe/C:\\WingsXI\\Ashita\\ffxi-bootmod\\wingsloader.exe/g' "/home/touma/.wine-wingsxi/drive_c/WingsXI/Ashita/config/boot/New Configuration 1.xml"
+sed -i 's/C:\\Users\\alexs\\Desktop\\Installer Package\\Ashita\\ffxi-bootmod\\pol.exe/C:\\WingsXI\\Ashita\\ffxi-bootmod\\wingsloader.exe/g' "~/.wine-wingsxi-64/drive_c/WingsXI/Ashita/config/boot/New Configuration 1.xml"
 ```
 
 (If the above does not work, you can edit the file manually as well)
@@ -127,7 +127,7 @@ You should login. If you are having trouble, consult the following common issue 
 
 1. **The game crashes before I can see anything.** You are probably running a 32 bit prefix or something else that is not configured wrong. Open a bug on WINE or attach a crash report here so I can help you.
 2. **The game crashes after I accept the EULA.** You don't have the X11DRV patch or it has stopped working. Try the WINE version listed here, make sure you're using staging, or ensure you're running your patched compiled version. 
-3. **The login boot loader keeps repeating the menu over and over and I can't login.** There exists a bug in WINE at the time of writing that prevents you from using the bootloader IO console. You can work around this by editing the boot command from WingsXI with your own command. If you have modified **nothing else** in the XML configuration, you can run this command with replacing **username** and **password** with your own values to resolve this quickly: `sed -i 's/-server game.wingsxi.com/-server game.wingsxi.com --user USERNAME --pass PASSWORD/g'  /tmp/foo.xml` 
+3. **The login boot loader keeps repeating the menu over and over and I can't login.** There exists a bug in WINE at the time of writing that prevents you from using the bootloader IO console. You can work around this by editing the boot command from WingsXI with your own command. If you have modified **nothing else** in the XML configuration, you can run this command with replacing **username** and **password** with your own values to resolve this quickly: `sed -i 's/-server game.wingsxi.com/-server game.wingsxi.com --user USERNAME --pass PASSWORD/g'  "~/.wine-wingsxi-64/drive_c/WingsXI/Ashita/config/boot/New Configuration 1.xml"` 
 4. **When I tab out of the game, I can't move / my macro palette keeps coming up.** This is due to your ALT key being stuck as being read. You can address this in a couple ways but the simplest way to do this is run `winecfg` per the initial command at the start of the guide again (`WINEPREFIX=~/.wine-wingsxi-64 winecfg` and turn on "Virtual Desktop" to get it's own window frame). Alternatively, when tabbing back in simply press "Alt" again and it should work again.
 
 Assuming a successful login, you should be able to login with a character and get going without any trouble now. You should have access to all Ashita plugins like you should under Windows as well.
@@ -184,9 +184,9 @@ I use *crosire's* proxy. You can install it by:
 
 2. Copying `d3d8.dll` it into the various spots:
 
-   1. `/home/touma/.wine-wingsxi-64/drive_c/WingsXI/Ashita/ffxi-bootmod`
-   2. `/home/touma/.wine-wingsxi-64/drive_c/WingsXI/SquareEnix/FINAL FANTASY XI`
-   3. `/home/touma/.wine-wingsxi-64/drive_c/WingsXI/SquareEnix/PlayOnlineViewer`
+   1. `~/.wine-wingsxi-64/drive_c/WingsXI/Ashita/ffxi-bootmod`
+   2. `~/.wine-wingsxi-64/drive_c/WingsXI/SquareEnix/FINAL FANTASY XI`
+   3. `~/.wine-wingsxi-64/drive_c/WingsXI/SquareEnix/PlayOnlineViewer`
 
 3. Set `winecfg` to use the native override
 
