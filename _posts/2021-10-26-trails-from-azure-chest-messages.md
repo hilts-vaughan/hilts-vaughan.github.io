@@ -115,5 +115,5 @@ console.log(pages.length);
 
 This gives us pretty much a perfect listing with some manual cleaning needed to remove some false positives. 
 
-[The full output of this can be found here.](/assets/azure/chest.txt)
+[The full output of this can be found here.](/assets/azure/chest.md)
 
