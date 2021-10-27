@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Trails from Azure: Finding all the chest messages
+title: Finding all the chest messages in "Trails from Azure"
 date: 2021-10-26 17:17 -0400
 comments: true
 ---
