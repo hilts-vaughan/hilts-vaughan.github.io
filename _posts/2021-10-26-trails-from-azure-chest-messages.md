@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Trails from Azure: "Trails in the Chest"
-date: 2021-06-19 17:17 -0400
+title: Trails from Azure: Finding all the chest messages
+date: 2021-10-26 17:17 -0400
 comments: true
 ---
 
