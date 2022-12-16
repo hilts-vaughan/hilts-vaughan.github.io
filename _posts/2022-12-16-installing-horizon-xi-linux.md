@@ -101,7 +101,7 @@ Now:
 
 It should look something like this:
 
-![image-20210619214000116](/assets/horizonxi/launcher_installing.png)
+![image-20210619214000116](/assets/proton.png)
 
 Next:
 
