@@ -86,7 +86,7 @@ The following is for Steam Deck users:
 1. Open a terminal and do the following:
 
 ```
-mdkir ~/horizon-xi
+mkdir ~/horizon-xi
 cp "~/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe" ~/horizon-xi/installer.exe
 cd ~/horizon-xi
 7z x installer.exe
