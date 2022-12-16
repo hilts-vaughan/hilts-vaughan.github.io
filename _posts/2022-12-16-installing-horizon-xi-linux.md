@@ -99,6 +99,7 @@ Now:
 
 1. Launch ProtonQT-Up
 1. Install "GE-Proton7-42"
+1. Restart Steam / deck if you can't restart Steam from desktop
 
 It should look something like this:
 
