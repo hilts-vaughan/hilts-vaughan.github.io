@@ -30,7 +30,10 @@ touma@setsuna:wine/x86_64-windows $ neofetch
  .`                                 `/
                                                                  
 ```
-## Prepare a version of Wine with the proper patches
+
+## Install HorizonXI - `wine-staging` (non steam-deck; steam deck below)
+
+### Prepare a version of Wine with the proper patches
 
 **tldr; install `wine-staging` if you want something simple (such as `yay wine-staging`) and you're good to go.
 
@@ -46,8 +49,6 @@ At the time of writing, this worked with:
 touma@setsuna:tidus $ wine --version
 wine-7.22 (Staging)
 ````
-
-## Install HorizonXI - `wine-staging`
 
 **Note: A lot of places on the Internet tell you to use a specific prefix architecture for Final Fantasy XI; this does not work for many private servers -- so please follow the directions very closely. If in doubt, follow step by step and start with a fresh prefix.**
 
