@@ -87,7 +87,7 @@ The following is for Steam Deck users:
 
 ```
 mkdir ~/horizon-xi
-cp "~/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe" ~/horizon-xi/installer.exe
+cp "/home/deck/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe" ~/horizon-xi/installer.exe
 cd ~/horizon-xi
 7z x installer.exe
 7z x HorizonXI_Launcher-1.0.0-full.nupkg
@@ -107,7 +107,7 @@ It should look something like this:
 
 Next:
 
-1. Now, open "Steam" and add a 'Non-Steam Game' and navigate to `~/horizon-xi/lib/net45/HorizonXI-Launcher.exe` for the executable
+1. Now, open "Steam" and add a 'Non-Steam Game' and navigate to `~/horizon-xi/lib/net45/HorizonXI-Launcher.exe` for the executable (you may have to change ".desktop" at the bottom to all application types)
 1. Right click the new entry, hit Properties > Compatibility
 1. Change to the new version of Proton GE you just installed
 
