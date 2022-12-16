@@ -90,7 +90,7 @@ mdkir ~/horizon-xi
 cp "~/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe" ~/horizon-xi/installer.exe
 cd ~/horizon-xi
 7z x installer.exe
-7z x HorizonXI-Launcher-1.0.0.Setup.exe
+7z x HorizonXI_Launcher-1.0.0-full.nupkg
 ```
 
 OK, that's done.
