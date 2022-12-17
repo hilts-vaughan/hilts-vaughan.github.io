@@ -188,6 +188,6 @@ The launcher has a fixed size. You can open the Steam keyboard and use tab to mo
 
 ### Where can I get artwork for my install?
 
-You can find some at ![assets](/assets/horizonxi/assets.zip).
+You can find some at [assets](/assets/horizonxi/assets.zip).
 
 These are offical art assets cut for the Deck. Thanks to trent@ and Aku@.
