@@ -192,7 +192,7 @@ DXVK can cause this on some older cards. Disable it.
 
 ### I'm getting told I can't run it as admin
 
-![admin](/assets/horizonxi/admin.png)
+![admin](/assets/horizonxi/admin_e.png)
 
 You're probably trying to run the installer as-is from the website. Don't do that; follow the directions above closely and make sure the item you added in Steam is the extracted `HorizonLauncher` and not the setup.
 
