@@ -178,7 +178,7 @@ You have two choices:
 
 1. Re-install and don't click Gamepad configuration -- the bug should be sorted "soon"
 1. If you need gamepad support (Deck / using gamepad out of the box), you can follow this guide: https://www.youtube.com/watch?v=0UYdFoaVnOE&lc=UgywlUbnFvFWxBUOzW54AaABAg. It's not supported by the team,
-   but has been confirmed to work on the deck. You may need to use spaces instead of commas (thanks Raphy@).
+   but has been confirmed to work on the deck.
 
 A patch is supposed to come soon for gamepad players.
 
