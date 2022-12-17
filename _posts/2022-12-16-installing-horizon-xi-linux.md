@@ -186,6 +186,17 @@ A patch is supposed to come soon for gamepad players.
 
 The launcher has a fixed size. You can open the Steam keyboard and use tab to move around controls you can't see, dock your Steam Deck to a montior / TV for more space, or use KDE window management features to move it around (google: "kde move window with mouse").
 
+### The launcher is showing all black
+
+DXVK can cause this on some older cards. Disable it.
+
+### I'm getting told I can't run it as admin
+
+![admin](/assets/horizonxi/admin.png)
+
+You're probably trying to run the installer as-is from the website. Don't do that; follow the directions above closely and make sure the item you added in Steam is the extracted `HorizonLauncher` and not the setup.
+
+
 ### Where can I get artwork for my install?
 
 You can find some at [assets](/assets/horizonxi/assets.zip).
