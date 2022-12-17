@@ -115,8 +115,79 @@ Launch the game!
 
 ![image-20210619214000116](/assets/horizonxi/compat.png)
 
-The launcher has some bugs. I will document them as I find it later.
+Begin installing.
+
+The launcher has some bugs. Continue down to FAQ down below to find any problems you might have. You may want to read them all before clicking install.
+
+When install is _complete_ you can run:
+
+```
+sudo find /home -name "HorizonXI.zip" -type f | sed 's/ /\\ /g' | xargs -i rm {}
+```
+
+... to clean up the ZIP to get some space back.
+
+## FAQ for Linux
+
+### The launcher keeps crashing while trying to install the game
+
+... and it's wiping all my progress!
 
 
+Mandatory warning from the HorizonXI staff: 
 
+> **Please note:** We will not offer support for users that bypass the launcher with this setup, it's a work around for users having memory issues due to having less than 16gb ram on PC.**
 
+Still with me? OK, next.
+
+There is a memory leak in the launcher as of launch day. The launcher does not save progress. The staff are working on fixing it but in the meantime, you can follow the below steps to get it working:
+
+```magnet:?xt=urn:btih:4eecae8431428820347314bc002492e210f29612&dn=HorizonXI.zip&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337&tr=udp%3a%2f%2fexplodie.org%3a6969```
+
+1. Launch the installation once
+1. Let it begin downloading some of the files
+1. Kill the launcher
+1. Grab the magnet with your favourite torrent client -- you can use a PC for this and transfer the file to the deck or just install something like Transmission / Deluge / qtBitTorrent on your Deck to use.
+1. Wait for the download to finish. It won't crash :) 
+1. Open `Dolphin` (file manager) and navigate to `/home/deck/.local/share/Steam/steamapps/compatdata/2237253119/pfx/drive_c/Program Files/HorizonXI/Downloads/`.
+1. The above path is an example -- your randomly generated number after `compatdata` is probably different and the install path depends on what you picked.
+1. Place the ZIP in this folder
+1. Open `Dolphin` (file manager) and navigate to `/home/deck/.local/share/Steam/steamapps/compatdata/2237253119/users/<user>/AppData/Roaming/HorizonXI-Launcher/config.json`
+1. Open `config.json` and modify the file:
+
+```
+		"baseGame": {
+			"downloaded": false,
+```
+
+should be replaced with:
+
+```
+		"baseGame": {
+			"downloaded": true,
+            
+```
+
+If you open the launcher, it should now finish installing the game.
+
+### Launching gamepad configuration prevents my game from launching anymore
+
+Sorry about that. It looks like a bug. Windows users are reporting the same. 
+
+You have two choices:
+
+1. Re-install and don't click Gamepad configuration -- the bug should be sorted "soon"
+1. If you need gamepad support (Deck / using gamepad out of the box), you can follow this guide: https://www.youtube.com/watch?v=0UYdFoaVnOE&lc=UgywlUbnFvFWxBUOzW54AaABAg. It's not supported by the team,
+   but has been confirmed to work on the deck. You may need to use spaces instead of commas (thanks Raphy@).
+
+A patch is supposed to come soon for gamepad players.
+
+### I can't see buttons on the UI
+
+The launcher has a fixed size. You can open the Steam keyboard and use tab to move around controls you can't see, dock your Steam Deck to a montior / TV for more space, or use KDE window management features to move it around (google: "kde move window with mouse").
+
+### Where can I get artwork for my install?
+
+You can find some at ![assets](/assets/horizonxi/assets.zip).
+
+These are offical art assets cut for the Deck. Thanks to trent@ and Aku@.
