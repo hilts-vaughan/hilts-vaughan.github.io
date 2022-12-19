@@ -194,7 +194,7 @@ and:
 }
 ```
 
-Gamepad should now work in game mode.
+Gamepad should now work in game mode. Credit goes to Sabriel@ for the gamepad directions. 
 
 ## FAQ for Linux
 
