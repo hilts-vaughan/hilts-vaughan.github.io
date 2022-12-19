@@ -63,7 +63,7 @@ Check that "Windows 7" is selected as the version.
 Moving along, let's run the installer inside of WINE:
 
 ```
-WINEPREFIX=~/.wine-horizonxi-64 wine "~/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe"
+WINEPREFIX=~/.wine-horizonxi-64 wine "~/Downloads/HorizonXI-Launcher-1.0.1.Setup.exe"
 ```
 
 ![image-20210619214000116](/assets/horizonxi/launcher_installing.png)
@@ -87,10 +87,10 @@ The following is for Steam Deck users:
 
 ```
 mkdir ~/horizon-xi
-cp "/home/deck/Downloads/HorizonXI-Launcher-1.0.0.Setup.exe" ~/horizon-xi/installer.exe
+cp "/home/deck/Downloads/HorizonXI-Launcher-1.0.1.Setup.exe" ~/horizon-xi/installer.exe
 cd ~/horizon-xi
 7z x installer.exe
-7z x HorizonXI_Launcher-1.0.0-full.nupkg
+7z x HorizonXI_Launcher-1.0.1-full.nupkg
 ```
 
 OK, that's done.
@@ -125,7 +125,76 @@ When install is _complete_ you can run:
 sudo find /home -name "HorizonXI.zip" -type f | sed 's/ /\\ /g' | xargs -i rm {}
 ```
 
-... to clean up the ZIP to get some space back.
+... to clean up the ZIP to get some space back. You may want to save a copy if you want to install somewhere else in the future.
+
+### Gamepad
+
+The gamepad needs configuring to work. In game mode:
+
+1. Open the launcher open the Gamepad Configuration
+1. Enable XInput
+1. 
+
+In desktop mode:
+
+1. Open Dolphin to `/home/deck/.local/share/Steam/steamapps/compatdata/<prefix_id>/drive_c/users/<user>/Application Data/HorizonXI-Launcher/` (`protontricks` can help find the ID)
+1. Open `config.json`
+1. Make the following edits to the config:
+
+```
+"padmode000": {
+    "name": "Gamepad Settings Controls",
+    "key": "padmode000",
+    "value": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+    ]
+}
+```
+
+and:
+
+```
+"padsin000": {
+    "name": "Button Mappings",
+    "key": "padsin000",
+    "value": [
+        8,
+        9,
+        13,
+        12,
+        10,
+        0,
+        1,
+        3,
+        2,
+        15,
+        -1,
+        -1,
+        14,
+        -33,
+        -33,
+        32,
+        32,
+        -36,
+        -36,
+        35,
+        35,
+        6,
+        7,
+        5,
+        4,
+        11,
+        -1
+    ]
+}
+```
+
+Gamepad should now work in game mode.
 
 ## FAQ for Linux
 
@@ -142,7 +211,9 @@ Still with me? OK, next.
 
 There is a memory leak in the launcher as of launch day. The launcher does not save progress. The staff are working on fixing it but in the meantime, you can follow the below steps to get it working:
 
-```magnet:?xt=urn:btih:4eecae8431428820347314bc002492e210f29612&dn=HorizonXI.zip&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337&tr=udp%3a%2f%2fexplodie.org%3a6969```
+```
+magnet:?xt=urn:btih:4eecae8431428820347314bc002492e210f29612&dn=HorizonXI.zip&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337&tr=udp%3a%2f%2fexplodie.org%3a6969
+```
 
 1. Launch the installation once
 1. Let it begin downloading some of the files
