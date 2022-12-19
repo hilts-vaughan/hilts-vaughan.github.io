@@ -137,7 +137,7 @@ The gamepad needs configuring to work. In game mode:
 
 In desktop mode:
 
-1. Open Dolphin to `/home/deck/.local/share/Steam/steamapps/compatdata/<prefix_id>/drive_c/users/<user>/Application Data/HorizonXI-Launcher/` (`protontricks` can help find the ID)
+1. Open Dolphin to `/home/deck/.local/share/Steam/steamapps/compatdata/<prefix_id>/drive_c/users/<user>/AppData/Roaming/HorizonXI-Launcher/` (`protontricks` can help find the ID)
 1. Open `config.json`
 1. Make the following edits to the config:
 
