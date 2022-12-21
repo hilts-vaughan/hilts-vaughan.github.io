@@ -85,6 +85,8 @@ The following is for Steam Deck users:
 1. Download the installer from the website. It will end up in `~/Downloads`
 1. Open a terminal and do the following:
 
+**Note: At the time of writing, the installer from the website may not work due to some breaking changes. You may need to install from https://github.com/HorizonFFXI/HorizonXI-Launcher-Binaries/releases/tag/v1.0.1 first, and then upgrade later. The install process seems broken on Linux on the newer launcher**
+
 ```
 mkdir ~/horizon-xi
 cp "/home/deck/Downloads/HorizonXI-Launcher-1.0.1.Setup.exe" ~/horizon-xi/installer.exe
