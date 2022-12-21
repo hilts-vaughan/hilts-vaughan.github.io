@@ -75,7 +75,7 @@ From this point, you can click "Install HorizonXI" and things will begin working
 
 That's it as far as we know right now.
 
-## Install HorizonXI - Linux Desktop using Lutris (Optional Windower 4 Setup)
+## Install HorizonXI - Linux Desktop using Lutris (non steam-deck; steam deck below)
 
 Lutris is meant to be an all-in-one installer, however there are additional steps required at present to make it work. If you want a quick solution that will work use the process listed above. Otherwise follow the instructions below.
 Once new Lutris runners are shipped with Lutris i'll update the script and this guide. Should be early next year for a new runner.
@@ -89,7 +89,7 @@ You need to have wine-staging installed.
 
 #### Installation
 1. Open Lutris and hit the (+)plus in the top left.
-1. Select install from YAML file, select the Horizon-XI.yaml file, and follow the steps in the installer.
+1. Select install from YAML file, select the **Horizon-XI.yaml** file, and follow the steps in the installer.
 1. Once completed hit **Close** not Launch(it will open but crash if you launch).
 1. Right click on HorizonXI in Lutris and select configure, go to runners and change it to wine-staging 7.22, then save and exit.
 1. All done open HorizonXI you will get a launch prompt asking for either HorizonXI or the 4GB Patch. Select HorizonXI and install like normal.
