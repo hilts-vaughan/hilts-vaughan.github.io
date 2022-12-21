@@ -105,7 +105,7 @@ Allows the game to use 4gb of RAM instead of the default 2gb. The disclamer in t
 1. Hit Patch, OK, and close the Patcher.
 
 #### Windower 4
-If you want to install that follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
+If you want to install Windower follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
 
 ## Install HorizonXI - Steam Play (Steam Deck / other systems)
 
