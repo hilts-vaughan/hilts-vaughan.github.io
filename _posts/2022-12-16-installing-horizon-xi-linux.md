@@ -85,7 +85,7 @@ You need to have wine-staging installed.
   - [Winehq](https://wiki.winehq.org/Download)
     Go to the link above and install based on your distribution. Remember you need **WINE-STAGING-7.22!**
   - [HorizonXI Lutris Script](https://github.com/sarca571ca/horizonxi-lutris/archive/refs/heads/master.zip)
-    Downloads the script from my repo. Be sure to extract the YAML files inside the archive.
+    Downloads the script from [sarca571ca/horizonxi-lutris](https://github.com/sarca571ca/horizonxi-lutris) repo. Be sure to extract the YAML files inside the archive.
 
 #### Installation
 1. Open Lutris and hit the (+)plus in the top left.
@@ -102,6 +102,8 @@ Check the FAQ section or click [here](#4gb-patch-1)
 
 #### Windower 4
 If you want to install Windower follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
+
+Guide by: Ex1L3 in the HorizonXI discord, feel free to ask question etc.
 
 ## Install HorizonXI - Steam Play (Steam Deck / other systems)
 
