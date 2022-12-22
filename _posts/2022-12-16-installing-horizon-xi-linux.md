@@ -159,6 +159,10 @@ sudo find /home -name "HorizonXI.zip" -type f | sed 's/ /\\ /g' | xargs -i rm {}
 
 ... to clean up the ZIP to get some space back. You may want to save a copy if you want to install somewhere else in the future.
 
+For automatic updates only after the game is installed and 100% downloaded on version 1.0.1, you can use Trent's script
+
+https://github.com/trentondyck/horizon_scripts
+
 ### Gamepad
 
 The gamepad needs configuring to work. In game mode:
