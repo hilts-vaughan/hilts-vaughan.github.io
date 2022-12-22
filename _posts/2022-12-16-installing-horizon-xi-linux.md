@@ -75,6 +75,36 @@ From this point, you can click "Install HorizonXI" and things will begin working
 
 That's it as far as we know right now.
 
+## Install HorizonXI - Linux Desktop using Lutris (non steam-deck; steam deck below)
+
+Lutris is meant to be an all-in-one installer, however there are additional steps required at present to make it work. If you want a quick solution that will work use the process listed above. Otherwise follow the instructions below.
+Once new Lutris runners are shipped with Lutris i'll update the script and this guide. Should be early next year for a new runner.
+
+#### Requirements
+You need to have wine-staging installed. 
+  - [Winehq](https://wiki.winehq.org/Download)
+    Go to the link above and install based on your distribution. Remember you need **WINE-STAGING-7.22!**
+  - [HorizonXI Lutris Script](https://github.com/sarca571ca/horizonxi-lutris/archive/refs/heads/master.zip)
+    Downloads the script from [sarca571ca/horizonxi-lutris](https://github.com/sarca571ca/horizonxi-lutris) repo. Be sure to extract the YAML files inside the archive.
+
+#### Installation
+1. Open Lutris and hit the (+)plus in the top left.
+1. Select install from YAML file, select the **Horizon-XI.yaml** file, and follow the steps in the installer.
+1. Once completed hit **Close** not Launch(it will open but crash if you launch).
+1. Right click on HorizonXI in Lutris and select configure, go to runners and change it to wine-staging 7.22, then save and exit.
+1. All done open HorizonXI you will get a launch prompt asking for either HorizonXI or the 4GB Patch. Select HorizonXI and install like normal.
+
+Note: You might get an error about missing the prereqs.zip, this can be ignored as lutris installed all pre-reqs automatically for you.
+If you experience the "black void" while changing areas you can lower your textures some in the HorizonXI Launcher. You can also use the 4GB patch i've included.
+
+#### 4GB Patch
+Check the FAQ section or click [here](#4gb-patch-1)
+
+#### Windower 4
+If you want to install Windower follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
+
+Guide by: Ex1L3 in the HorizonXI discord, feel free to ask question etc.
+
 ## Install HorizonXI - Steam Play (Steam Deck / other systems)
 
 The following is for Steam Deck users:
@@ -269,6 +299,18 @@ DXVK can cause this on some older cards. Disable it.
 
 You're probably trying to run the installer as-is from the website. Don't do that; follow the directions above closely and make sure the item you added in Steam is the extracted `HorizonLauncher` and not the setup.
 
+### 4GB Patch
+Allows the game to use 4gb of RAM instead of the default 2gb. The disclamer in the discord says VRAM but Thorny(the Aurthor of the patch) says it increases RAM allowance of the executable.
+
+1. If you are using the Lutris install script then:
+	> Launch HorizonXI in Lutris seclect 4GB Patch option and hit ok.
+	
+   If using the base wine install then:  
+   	> Download the Patch [here](https://drive.google.com/uc?export=download&id=1MKuPC6iI3s6vuoi1jEsgO2z7Kanf9OKE) and extract the archive.  
+   	> Run the patcher inside your prefix  
+	> ```WINEPREFIX=~/.wine-horizonxi-64 wine "~/Downloads/LargeAddressAwarePatcher/LargeAddressAwarePatcher.exe"```
+1. Navigate to C:\PATH\TO\HorizonXI\bootloader\horizon-loader.exe
+1. Hit Patch, OK, and close the Patcher.
 
 ### Where can I get artwork for my install?
 
