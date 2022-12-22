@@ -98,11 +98,7 @@ Note: You might get an error about missing the prereqs.zip, this can be ignored 
 If you experience the "black void" while changing areas you can lower your textures some in the HorizonXI Launcher. You can also use the 4GB patch i've included.
 
 #### 4GB Patch
-Allows the game to use 4gb of RAM instead of the default 2gb. The disclamer in the discord says VRAM but Thorny(the Aurthor of the patch) says it increases RAM allowance of the executable.
-
-1. Launch HorizonXI in Lutris seclect 4GB Patch option and hit ok.
-1. Navigate to C;\Program Files x(x86)\HorizonXI\bootloader\horizon-loader.exe
-1. Hit Patch, OK, and close the Patcher.
+Check the FAQ section or click [here](#4gb-patch-1)
 
 #### Windower 4
 If you want to install Windower follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
@@ -301,6 +297,18 @@ DXVK can cause this on some older cards. Disable it.
 
 You're probably trying to run the installer as-is from the website. Don't do that; follow the directions above closely and make sure the item you added in Steam is the extracted `HorizonLauncher` and not the setup.
 
+### 4GB Patch
+Allows the game to use 4gb of RAM instead of the default 2gb. The disclamer in the discord says VRAM but Thorny(the Aurthor of the patch) says it increases RAM allowance of the executable.
+
+1. If you are using the Lutris install script then:
+	> Launch HorizonXI in Lutris seclect 4GB Patch option and hit ok.
+	
+   If using the base wine install then:  
+   	> Download the Patch [here](https://drive.google.com/uc?export=download&id=1MKuPC6iI3s6vuoi1jEsgO2z7Kanf9OKE) and extract the archive.  
+   	> Run the patcher inside your prefix  
+	> ```WINEPREFIX=~/.wine-horizonxi-64 wine "~/Downloads/LargeAddressAwarePatcher/LargeAddressAwarePatcher.exe"```
+1. Navigate to C:\PATH\TO\HorizonXI\bootloader\horizon-loader.exe
+1. Hit Patch, OK, and close the Patcher.
 
 ### Where can I get artwork for my install?
 
