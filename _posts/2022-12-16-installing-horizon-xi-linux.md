@@ -107,6 +107,10 @@ Guide by: Ex1L3 in the HorizonXI discord, feel free to ask question etc.
 
 ## Install HorizonXI - Steam Play (Steam Deck / other systems)
 
+There is an video that goes with this guide if you would prefer: https://www.youtube.com/watch?v=4pWbxU025Ak
+
+If you are new to Proton or Linux, it may be valuable.
+
 The following is for Steam Deck users:
 
 1. Boot your Steam Deck into "Desktop Mode"
@@ -147,7 +151,7 @@ Launch the game!
 
 ![image-20210619214000116](/assets/horizonxi/compat.png)
 
-Begin installing.
+Begin installing. You should pick C:\Program Files when prompted for an install path. You should not pick anything else. You can move `compatdata` to an SD card later if needed.
 
 The launcher has some bugs. Continue down to FAQ down below to find any problems you might have. You may want to read them all before clicking install.
 
