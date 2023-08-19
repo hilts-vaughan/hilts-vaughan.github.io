@@ -183,7 +183,7 @@ The gamepad needs configuring to work. In game mode:
 
 In desktop mode:
 
-1. Open Dolphin to `/home/deck/.local/share/Steam/steamapps/compatdata/<prefix_id>/drive_c/users/<user>/AppData/Roaming/HorizonXI-Launcher/` (`protontricks` can help find the ID)
+1. Open Dolphin to `/home/deck/.local/share/Steam/steamapps/compatdata/<prefix_id>/pfx/drive_c/users/<user>/AppData/Roaming/HorizonXI-Launcher/` (`protontricks` can help find the ID)
 1. Open `config.json`
 1. Make the following edits to the config:
 
@@ -269,7 +269,7 @@ magnet:?xt=urn:btih:4eecae8431428820347314bc002492e210f29612&dn=HorizonXI.zip&tr
 1. Open `Dolphin` (file manager) and navigate to `/home/deck/.local/share/Steam/steamapps/compatdata/2237253119/pfx/drive_c/Program Files/HorizonXI/Downloads/`.
 1. The above path is an example -- your randomly generated number after `compatdata` is probably different and the install path depends on what you picked.
 1. Place the ZIP in this folder
-1. Open `Dolphin` (file manager) and navigate to `/home/deck/.local/share/Steam/steamapps/compatdata/2237253119/users/<user>/AppData/Roaming/HorizonXI-Launcher/config.json`
+1. Open `Dolphin` (file manager) and navigate to `/home/deck/.local/share/Steam/steamapps/compatdata/2237253119/pfx/users/<user>/AppData/Roaming/HorizonXI-Launcher/config.json`
 1. Open `config.json` and modify the file:
 
 ```
@@ -286,6 +286,71 @@ should be replaced with:
 ```
 
 If you open the launcher, it should now finish installing the game.
+
+### How can I update the launcher?
+
+If you followed the guide, do the following:
+
+1. Find the launcher version you want to update to from https://github.com/HorizonFFXI/HorizonXI-Launcher-Binaries/releases
+
+1. Run the following commands in the terminal one-by-one in Desktop mode again. This is just like the initial install:
+
+```
+cp "/home/deck/Downloads/HorizonXI-Launcher-1.1.12.Setup.exe" ~/horizon-xi/installer.exe
+cd ~/horizon-xi
+7z x installer.exe
+7z x HorizonXI_Launcher-1.1.12-full.nupkg
+```
+
+Make sure to replace the version number in the file paths to match the version of the launcher you just installed.
+
+That's it. 
+
+1. Launch the game, it should be updated.
+
+### My game is asking me to install again. What happened?
+
+This is typically because something has happened to `storage.json`. If you just want to fix this, do the following:
+
+1. Reboot your Steam Deck and do NOT launch the game at all.
+1. Boot into desktop mode
+1. Head to `/home/deck/.local/share/Steam/steamapps/compatdata/<PREFIX_ID>/pfx/users/<user>/AppData/Roaming/HorizonXI-Launcher/storage.json` on the deck via Dolphin or some other file manager. Just like all other Proton installed software, the prefix ID will be random. You can use `protontricks` to find it or just sort by "recently modified" or something else to try and find the folder.
+1. Open the file. Inside of this, you will find a bunch of JSON with several sections. The following section should be present.
+
+```
+		"installPath": {
+			"name": "installPath",
+			"description": "Location of HorizonXI Game install.",
+			"path": "C:\\Program Files\\HorizonXI\\Game"
+		},
+		"downloadPath": {
+			"name": "downloadPath",
+			"description": "Location of HorizonXI zip download.",
+			"path": "C:\\Program Files\\HorizonXI\\Downloads"
+		}
+	},
+```
+
+If you have followed the guide, you should have a copy of the game at `C:\\Program Files\\HorizonXI`. Some folks may have also installed it to `C:\\`. If you are not sure where it is, go back to the `drive_c` inside of the `pfx` folder (up a few directories from this config file) and find the location. The path will be whatever it is under `drive_c`, so for example if `drive_c/HorizonXI` exists, then your path is probably `C:\\Program Files`. The double slash is intentional, it's called escaping.
+
+1. Modify the paths to point to the copy of the HXI game you have located. If you can't find it, then that means your install is either lost or you cannot locate it. You will need to reinstall.
+
+1. In addition, there is a section of the config file that looks like this:
+
+```
+		"currentVersion": 3,
+		"latestVersion": 3,
+		"baseGame": {
+			"downloaded": true,
+			"extracted": true
+		},
+		"updater": {
+			"downloaded": 3,
+			"extracted": 3
+		},
+```
+
+You can modify the values to match this. If you don't know if your old install is fully patched or not, I would recommend replacing `currentVersion` with `2` or `1` to redownload any DATs needed.
 
 ### Launching gamepad configuration prevents my game from launching anymore
 
