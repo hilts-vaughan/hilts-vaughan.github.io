@@ -82,17 +82,28 @@ Once new Lutris runners are shipped with Lutris i'll update the script and this 
 
 #### Requirements
 You need to have wine-staging installed. 
-  - [Winehq](https://wiki.winehq.org/Download)
-    Go to the link above and install based on your distribution. Remember you need **WINE-STAGING-7.22!**
+  - ProtonUp-Qt and runner "lutris-GE-Proton7-42-x86_64" installed for lutris.
+
+    Install ProtonUp-Qt on your distribution and open it up. 
+    1. At the top make sure Lutris is selected. 
+    2. Then hit "Add Version"
+
+        ![img](/assets/horizonxi/protonup-qt_01.png)
+
+    3. Select "Wine-GE" for compatability tool.
+    4. Select "GE Proton 7-42" for version.
+    5. Hit install and once it's complete you're done with ProtonUp-Qt.
+
+        ![img](/assets/horizonxi/protonup-qt_02.png)
+
   - [HorizonXI Lutris Script](https://github.com/sarca571ca/horizonxi-lutris/archive/refs/heads/master.zip)
     Downloads the script from [sarca571ca/horizonxi-lutris](https://github.com/sarca571ca/horizonxi-lutris) repo. Be sure to extract the YAML files inside the archive.
 
 #### Installation
 1. Open Lutris and hit the (+)plus in the top left.
 1. Select install from YAML file, select the **Horizon-XI.yaml** file, and follow the steps in the installer.
-1. Once completed hit **Close** not Launch(it will open but crash if you launch).
-1. Right click on HorizonXI in Lutris and select configure, go to runners and change it to wine-staging 7.22, then save and exit.
-1. All done open HorizonXI you will get a launch prompt asking for either HorizonXI or the 4GB Patch. Select HorizonXI and install like normal.
+1. Once completed hit **Close** not Launch.
+1. Now your free to launch HorizonXI you will get a launch prompt asking for either HorizonXI or the 4GB Patch. Select HorizonXI and install like normal.
 
 Note: You might get an error about missing the prereqs.zip, this can be ignored as lutris installed all pre-reqs automatically for you.
 If you experience the "black void" while changing areas you can lower your textures some in the HorizonXI Launcher. You can also use the 4GB patch i've included.
@@ -103,7 +114,14 @@ Check the FAQ section or click [here](#4gb-patch-1)
 #### Windower 4
 If you want to install Windower follow the README.md provided in the archive you downloaded earlier. Unless otherwise requested by Vaughan I won't clog this guide up with that install process.
 
-Guide by: Ex1L3 in the HorizonXI discord, feel free to ask question etc.
+#### Version
+- Updated September 22, 2023
+  - Added new requirement for ProtonUp-Qt
+  - Updated install process for a smoother install.
+  - Supports Horizon Launcher v1.2.1
+- Initial guide December 22, 2022
+
+Guide by: Ex1L3(Asri) in the HorizonXI discord, feel free to ask question etc.
 
 ## Install HorizonXI - Steam Play (Steam Deck / other systems)
 
