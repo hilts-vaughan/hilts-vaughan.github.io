@@ -16,8 +16,10 @@ comments: true
 </article>
 
 {% if page.comments %}
-  {% include archived_comments.html %}
-  {% include bluesky_comments.html %}
+  {% if page.bluesky_post_uri or page.bluesky_auto_discover %}
+    {% include archived_comments.html %}
+    {% include bluesky_comments.html %}
+  {% endif %}
 {% endif %}
 
 <aside id="related" class="related-posts">

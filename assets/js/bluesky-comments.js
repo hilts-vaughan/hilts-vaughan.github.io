@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const bskyWebUrl = container.getAttribute("data-bsky-uri");
   const bskyAuthor = container.getAttribute("data-bsky-author");
   const pageTitle = container.getAttribute("data-page-title") || document.title;
+  const pagePath = container.getAttribute("data-page-path") || "";
   const pageUrl = container.getAttribute("data-page-url") || window.location.href;
 
   // Set up stale-while-revalidate loading
-  loadBlueskyComments({ webUrl: bskyWebUrl, author: bskyAuthor, pageTitle, pageUrl }, container);
+  loadBlueskyComments({ webUrl: bskyWebUrl, author: bskyAuthor, pageTitle, pagePath, pageUrl }, container);
 });
 
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes cache expiration
@@ -91,6 +92,9 @@ async function discoverBlueskyPostUri(context) {
 
   const did = await resolveHandleToDid(context.author);
   const pageSignals = buildPageSignals(context.pageTitle, context.pageUrl);
+  if (context.pagePath) {
+    pageSignals.relativeUrl = normalizeUrl(context.pagePath);
+  }
   let cursor = null;
   let bestMatch = null;
 
@@ -145,6 +149,7 @@ function buildPageSignals(pageTitle, pageUrl) {
   return {
     normalizedTitle,
     normalizedUrl,
+    relativeUrl: normalizedUrl,
     titleTokens,
     urlTokens
   };
@@ -161,9 +166,14 @@ function scoreCandidate(post, pageSignals) {
     const normalizedLink = normalizeUrl(link);
     if (!normalizedLink) continue;
 
-    if (normalizedLink === pageSignals.normalizedUrl) {
+    const matchesUrl = [
+      pageSignals.normalizedUrl,
+      pageSignals.relativeUrl
+    ].filter(Boolean);
+
+    if (matchesUrl.includes(normalizedLink)) {
       score += 1000;
-    } else if (normalizedLink.includes(pageSignals.normalizedUrl) || pageSignals.normalizedUrl.includes(normalizedLink)) {
+    } else if (matchesUrl.some(candidate => normalizedLink.includes(candidate) || candidate.includes(normalizedLink))) {
       score += 850;
     }
   }

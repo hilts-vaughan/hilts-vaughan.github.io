@@ -3,6 +3,8 @@ layout: post
 title: "Using Codex on this blog"
 date: 2026-07-09 22:42 -0400
 comments: true
+bluesky_author_handle: "hilts-vaughan.bsky.social"
+bluesky_auto_discover: true
 ---
 
 > Disclaimer: I at work at Google and have used Antigravity and the suite of models quite extensively. However, I am quite new to the actual open source tech stack

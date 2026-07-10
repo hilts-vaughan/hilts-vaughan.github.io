@@ -1,6 +1,7 @@
 {% assign bluesky_author_handle = page.bluesky_author_handle | default: site.bluesky_author_handle %}
-{% assign page_canonical_url = site.url | append: page.url | replace: 'index.html', '' %}
-{% if page.bluesky_post_uri or bluesky_author_handle %}
+{% assign page_path = page.url | replace: 'index.html', '' %}
+{% assign page_canonical_url = site.url | append: page_path %}
+{% if page.bluesky_post_uri or page.bluesky_auto_discover %}
   <div class="bluesky-comments-wrapper">
     <div id="bluesky-comments-header" class="comments-title-wrapper">
       <h3 class="comments-title">Comments via Bluesky 🦋</h3>
@@ -20,6 +21,7 @@
       data-bsky-uri="{{ page.bluesky_post_uri }}"
       data-bsky-author="{{ bluesky_author_handle }}"
       data-page-title="{{ page.title | escape }}"
+      data-page-path="{{ page_path | escape }}"
       data-page-url="{{ page_canonical_url | escape }}"
     >
       <div class="bsky-loading">
