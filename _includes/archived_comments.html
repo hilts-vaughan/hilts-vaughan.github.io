@@ -1,0 +1,11 @@
+{% assign post_slug = page.path | split: "/" | last | replace: ".md", "" %}
+{% assign archived_comments = site.data.comments[post_slug] %}
+{% if archived_comments and archived_comments.size > 0 %}
+  <div class="archived-comments-section">
+    <h3 class="comments-title">Archived Disqus Comments</h3>
+    <p>These comments are archived from the previous Disqus system and are read-only. I moved away from Disqus due to their ad-injection some time ago.</p>
+    <div class="archived-comments-list">
+      {% include archived_comment_node.html comments=archived_comments %}
+    </div>
+  </div>
+{% endif %}

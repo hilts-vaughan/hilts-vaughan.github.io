@@ -1,0 +1,74 @@
+[
+  {
+    "id": "3168306143",
+    "parent_id": null,
+    "thread_id": "4975210648",
+    "message": "<p>This doesn't work for me. No output at all</p>",
+    "created_at": "2017-02-22T00:23:28Z",
+    "author_name": "JacobSwaggedUp",
+    "author_username": "disqus_PZYoIn6sRD",
+    "replies": [
+      {
+        "id": "3168363527",
+        "parent_id": "3168306143",
+        "thread_id": "4975210648",
+        "message": "<p>Hey Jacob,</p><p>You should follow the guide online @ the Github page to make sure you have everything you need installed. You can also try an older version and see if this helps, as the newer one is a \"beta\" version.</p><p>If you need more help, provide more information here or on Github and I would love to help you out. :)</p>",
+        "created_at": "2017-02-22T01:10:32Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": [
+          {
+            "id": "3460211669",
+            "parent_id": "3168363527",
+            "thread_id": "4975210648",
+            "message": "<p>I have the same issue..</p>",
+            "created_at": "2017-08-09T22:26:50Z",
+            "author_name": "Davion Alexander Blackwíng",
+            "author_username": "davionalexanderblackwng",
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5415077090",
+    "parent_id": null,
+    "thread_id": "4975210648",
+    "message": "<p>No output on the GUI version, with both prerequisites installed. Just says \"Successfully Unlinked!\"</p><p>Any help would be appreciated!</p>",
+    "created_at": "2021-06-10T15:12:48Z",
+    "author_name": "Mike Beno",
+    "author_username": "Yuugenshou",
+    "replies": []
+  },
+  {
+    "id": "5854831324",
+    "parent_id": null,
+    "thread_id": "4975210648",
+    "message": "<p>No output, already followed all the steps from Github.</p>",
+    "created_at": "2022-05-12T00:12:20Z",
+    "author_name": "vitor.mathews",
+    "author_username": "vitormathews",
+    "replies": []
+  },
+  {
+    "id": "5931107082",
+    "parent_id": null,
+    "thread_id": "4975210648",
+    "message": "<p>Hi, Thanks for the application, but as others say, it does not work for me either.<br>The application just says inmediately \"The unlinking is complete!\" after you press the \"Unlink\" button.<br>EDIT: Just for future readers. This one does not work, but I managed to make the original (not GUI fork) one to work. Download this package:<br><a href=\"https://github.com/gnoling/UnlinkMKV\" rel=\"nofollow noopener\" target=\"_blank\" title=\"https://github.com/gnoling/UnlinkMKV\">https://github.com/gnoling/...</a><br>Just press the \"Code\" &gt; \"Download zip\" button.<br>Open the zip, extract the dist/unlinkmkv-win64.7z archive. This is a package the original author setup as a portable windows release, which just works. Extract oit on a Windows machine (win10 in my case). Then add the extracted zip filder to your PATH variable (in my case \"Z:\\Tools\\unlinkmkv\").<br>Copy your set of linked mkv files to same directory.<br>Open a CMD, go to your path and just write \"unlinkmkv\". It will do the job.</p><p>Greetings.</p>",
+    "created_at": "2022-07-28T15:29:36Z",
+    "author_name": "cubatilles",
+    "author_username": "cubatilles",
+    "replies": []
+  },
+  {
+    "id": "6047198402",
+    "parent_id": null,
+    "thread_id": "4975210648",
+    "message": "<p>Correctly setted up and everything work except for the output itself. FIles are unlinked but no OP or EDs</p>",
+    "created_at": "2022-11-22T11:53:55Z",
+    "author_name": "Ironash",
+    "author_username": "iRonASH_v01",
+    "replies": []
+  }
+]

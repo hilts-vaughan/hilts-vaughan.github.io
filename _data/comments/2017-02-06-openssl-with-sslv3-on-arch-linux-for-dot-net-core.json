@@ -1,0 +1,141 @@
+[
+  {
+    "id": "3214206129",
+    "parent_id": null,
+    "thread_id": "5539416651",
+    "message": "<p>Awesome, thanks, genius!</p><p>You saved me a lot of time!</p>",
+    "created_at": "2017-03-20T23:28:01Z",
+    "author_name": "Hell Mouth",
+    "author_username": "hell_mouth",
+    "replies": [
+      {
+        "id": "3214232691",
+        "parent_id": "3214206129",
+        "thread_id": "5539416651",
+        "message": "<p>Hey, I'm glad it helped! Happy development. :)</p>",
+        "created_at": "2017-03-20T23:48:37Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": [
+          {
+            "id": "3214247233",
+            "parent_id": "3214232691",
+            "thread_id": "5539416651",
+            "message": "<p>Thanks, though I didn't need it for .net :)</p><p>It was for a build of python (including a lot of extra libraries) that i distribute in a machine learning 'splunk' app I develop for a large company for use internally. You see, I just got a new laptop for which I installed an arch linux distro on but my app didn't work since it couldn't import ssl. Now I can continue to develop on this machine :)</p><p>Thanks again for sharing your fix.</p><p>Cheers</p>",
+            "created_at": "2017-03-20T23:59:58Z",
+            "author_name": "Hell Mouth",
+            "author_username": "hell_mouth",
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3241082375",
+    "parent_id": null,
+    "thread_id": "5539416651",
+    "message": "<p>I can't get this to work. Not sure why but I follow the steps above exactly and I see no diff when running `pacaur -S openssl`, even tried with `yaourt` as well, just to be sure.</p>",
+    "created_at": "2017-04-05T14:43:10Z",
+    "author_name": "markwoodhall",
+    "author_username": "markwoodhall",
+    "replies": [
+      {
+        "id": "3241322940",
+        "parent_id": "3241082375",
+        "thread_id": "5539416651",
+        "message": "<p>Hey Mark,</p><p>Have you tried ensuring the file is readable by your helper of choice?</p><p>Feel free to contact me personally if you need help.</p><p>Vaughan</p>",
+        "created_at": "2017-04-05T16:44:18Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": [
+          {
+            "id": "3241650621",
+            "parent_id": "3241322940",
+            "thread_id": "5539416651",
+            "message": "<p>Thanks for replying Vaughan, Not sure exactly why but it's working fine on another box. The only difference is I've exclusively used yaourt, even for installing customizepkg-git, whereas before I installed that with pacaur.</p>",
+            "created_at": "2017-04-05T19:48:53Z",
+            "author_name": "markwoodhall",
+            "author_username": "markwoodhall",
+            "replies": [
+              {
+                "id": "3242117822",
+                "parent_id": "3241650621",
+                "thread_id": "5539416651",
+                "message": "<p>Sounds like this is a `customizepkg` problem, then. You can file an issue with them upstream over here: <a href=\"https://github.com/ava1ar/customizepkg\" rel=\"nofollow noopener\" target=\"_blank\" title=\"https://github.com/ava1ar/customizepkg\">https://github.com/ava1ar/c...</a></p><p>You can also apply the patches manually but as I listed above, it's kind of cumbersome to do this every system update.</p><p>Let me know if I can help with anything else.</p>",
+                "created_at": "2017-04-06T00:10:25Z",
+                "author_name": "hiltsvaughan",
+                "author_username": "hiltsvaughan",
+                "replies": [
+                  {
+                    "id": "3244640170",
+                    "parent_id": "3242117822",
+                    "thread_id": "5539416651",
+                    "message": "<p>It's working on the box where I was having issues now. `customizepkg-git` needed to be installed with yaourt, wouldn't work with `pacaur`.</p>",
+                    "created_at": "2017-04-07T13:12:51Z",
+                    "author_name": "markwoodhall",
+                    "author_username": "markwoodhall",
+                    "replies": [
+                      {
+                        "id": "3244659650",
+                        "parent_id": "3244640170",
+                        "thread_id": "5539416651",
+                        "message": "<p>Great!</p><p>Happy development.</p>",
+                        "created_at": "2017-04-07T13:26:22Z",
+                        "author_name": "hiltsvaughan",
+                        "author_username": "hiltsvaughan",
+                        "replies": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3279758979",
+    "parent_id": null,
+    "thread_id": "5539416651",
+    "message": "<p>Works for MS SQL Server on Archlinux???</p>",
+    "created_at": "2017-04-29T00:26:40Z",
+    "author_name": "Ivan Almonacid",
+    "author_username": "ivanalmonacid",
+    "replies": [
+      {
+        "id": "3284391751",
+        "parent_id": "3279758979",
+        "thread_id": "5539416651",
+        "message": "<p>Sure, if you need OpenSSL v3 support.</p>",
+        "created_at": "2017-05-02T03:49:24Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": []
+      }
+    ]
+  },
+  {
+    "id": "4364330494",
+    "parent_id": null,
+    "thread_id": "5539416651",
+    "message": "<p>I'm working on a \"legacy\" project and having the SSLv3 problem when trying to access the sql server database. The current packages for openssl are totally different from the ones on this article. Do you have any suggestion on how one would solve this issue?</p>",
+    "created_at": "2019-03-05T00:36:21Z",
+    "author_name": "Winicius Cota",
+    "author_username": "winiciuscota",
+    "replies": [
+      {
+        "id": "4364340294",
+        "parent_id": "4364330494",
+        "thread_id": "5539416651",
+        "message": "<p>Probably the same way, just needing a different patchset to work around the problems.</p><p>You can drop me an email if you want to discuss it further.</p>",
+        "created_at": "2019-03-05T00:46:35Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": []
+      }
+    ]
+  }
+]

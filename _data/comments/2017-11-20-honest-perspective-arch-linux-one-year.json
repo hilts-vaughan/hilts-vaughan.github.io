@@ -1,0 +1,12 @@
+[
+  {
+    "id": "3629055796",
+    "parent_id": null,
+    "thread_id": "6301386615",
+    "message": "<p>\"PlayOnLinux is not all that good in a lot of cases\" This is true. I've actually found that Lutris (<a href=\"http://www.lutris.net\" rel=\"nofollow noopener\" target=\"_blank\" title=\"www.lutris.net\">www.lutris.net</a>) is much better than PlayOnLinux because people are actively working on scripts--think the AUR for games. It's so good I was playing Overwatch and was able to get DOOM 2016 to at least start.</p><p>The rest of your article is on par with how modern Linux is. I dislike just how fragmented the community is because you do have some programs that are built for a specific distro family (.deb, .rpm). This will be fixed with AppImage and FlatPak I hope.</p>",
+    "created_at": "2017-11-22T21:53:32Z",
+    "author_name": "Buob",
+    "author_username": "buob",
+    "replies": []
+  }
+]

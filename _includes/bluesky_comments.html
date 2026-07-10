@@ -1,0 +1,32 @@
+{% assign bluesky_author_handle = page.bluesky_author_handle | default: site.bluesky_author_handle %}
+{% assign page_canonical_url = site.url | append: page.url | replace: 'index.html', '' %}
+{% if page.bluesky_post_uri or bluesky_author_handle %}
+  <div class="bluesky-comments-wrapper">
+    <div id="bluesky-comments-header" class="comments-title-wrapper">
+      <h3 class="comments-title">Comments via Bluesky 🦋</h3>
+      {% if page.bluesky_post_uri %}
+        <a id="bsky-cta-button" href="{{ page.bluesky_post_uri }}" target="_blank" rel="noopener noreferrer" class="bsky-cta-button">
+          Reply on Bluesky
+        </a>
+      {% else %}
+        <a id="bsky-cta-button" href="#" target="_blank" rel="noopener noreferrer" class="bsky-cta-button" hidden>
+          Reply on Bluesky
+        </a>
+      {% endif %}
+    </div>
+    
+    <div
+      id="bluesky-comments"
+      data-bsky-uri="{{ page.bluesky_post_uri }}"
+      data-bsky-author="{{ bluesky_author_handle }}"
+      data-page-title="{{ page.title | escape }}"
+      data-page-url="{{ page_canonical_url | escape }}"
+    >
+      <div class="bsky-loading">
+        <span class="bsky-spinner"></span> Loading comments from Bluesky...
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/bluesky-comments.js" defer></script>
+{% endif %}

@@ -1,0 +1,27 @@
+{% for comment in include.comments %}
+  <div class="archived-comment" id="disqus-comment-{{ comment.id }}">
+    <div class="comment-metadata">
+      <span class="comment-author">
+        <span class="comment-author-avatar-placeholder">
+          {{ comment.author_name | slice: 0 | upcase }}
+        </span>
+        <strong class="comment-author-name">{{ comment.author_name }}</strong>
+        {% if comment.author_username %}
+          <span class="comment-author-handle">@{{ comment.author_username }}</span>
+        {% endif %}
+      </span>
+      <span class="comment-date">
+        {{ comment.created_at | date: "%b %d, %Y at %I:%M %p" }}
+      </span>
+    </div>
+    <div class="comment-content">
+      {{ comment.message }}
+    </div>
+    
+    {% if comment.replies and comment.replies.size > 0 %}
+      <div class="comment-replies">
+        {% include archived_comment_node.html comments=comment.replies %}
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}

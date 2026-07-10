@@ -3,4 +3,5 @@ highlighter: rouge
 url: http://vaughanhilts.me
 lsi: false
 description: "Just a place to store my random thoughts and contributions to the world."
+bluesky_author_handle: hilts-vaughan.bsky.social
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, vendor/]

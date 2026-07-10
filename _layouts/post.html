@@ -3,6 +3,7 @@ layout: default
 comments: true
 ---
 
+{% assign bluesky_author_handle = page.bluesky_author_handle | default: site.bluesky_author_handle %}
 <p class="post-meta">
   {{ page.date | date: "%B %d, %Y" }}
   <a href="/">Posts</a>
@@ -15,26 +16,8 @@ comments: true
 </article>
 
 {% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    var disqus_config = function () {
-        // this.page.url = "{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-        var d = document, s = d.createElement('script');
-
-        s.src = '//hiltsvaughan.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  {% include archived_comments.html %}
+  {% include bluesky_comments.html %}
 {% endif %}
 
 <aside id="related" class="related-posts">

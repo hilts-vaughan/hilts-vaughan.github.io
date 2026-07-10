@@ -1,0 +1,43 @@
+[
+  {
+    "id": "5131379435",
+    "parent_id": null,
+    "thread_id": "6640741514",
+    "message": "<p>Hi, how can I get this to work with Telegram? PushBullet is not available in the UK. I tried to use the telegram agent but says it's not working.</p>",
+    "created_at": "2020-10-30T19:34:39Z",
+    "author_name": "NNM",
+    "author_username": "marthamead",
+    "replies": [
+      {
+        "id": "5265963642",
+        "parent_id": "5131379435",
+        "thread_id": "6640741514",
+        "message": "<p>Just use a Telegram agent for Huginn :)</p>",
+        "created_at": "2021-02-12T17:51:00Z",
+        "author_name": "hiltsvaughan",
+        "author_username": "hiltsvaughan",
+        "replies": []
+      }
+    ]
+  },
+  {
+    "id": "5243973159",
+    "parent_id": null,
+    "thread_id": "6640741514",
+    "message": "<p>Neat stuff. I’m going to see about making this watch for covid vaccination appointment openings. The appointments are a few steps deep in an online system, we’ll see how it goes.</p>",
+    "created_at": "2021-01-27T16:19:07Z",
+    "author_name": "Drew",
+    "author_username": "disqus_c0utSUwNjp",
+    "replies": []
+  },
+  {
+    "id": "6596919263",
+    "parent_id": null,
+    "thread_id": "6640741514",
+    "message": "<p>can you please provide the code so that i can copy it ? i followed your instructions but for some reason i am not getting any notifications. also pushbullet does not have app for iphone so i am trying pushover. but i just realized we can also use telegram bot. btw i am also fellow rfder for long time :)</p>",
+    "created_at": "2024-11-21T14:56:55Z",
+    "author_name": "Daljit sandhu",
+    "author_username": "disqus_s3e473kcyw",
+    "replies": []
+  }
+]

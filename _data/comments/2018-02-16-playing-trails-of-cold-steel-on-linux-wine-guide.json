@@ -1,0 +1,32 @@
+[
+  {
+    "id": "3864893411",
+    "parent_id": null,
+    "thread_id": "6485008908",
+    "message": "<p>There is an issue if you attempt to extract the Humble Bundle Version of the game with Unzip.  When extracting an error like: file #7634:  bad zipfile offset (local header sig):  &lt;somenumber&gt; will show up but file will continue to extract.  If you launch the game after that error it will crash after the configuration screen.</p><p>To get around this quickly all you need to do is download 7-Zip Windows Version from 7-Zip's website and install it (Wine can run this without any changes needing to be made to the Wine Prefix).  From there you can launch 7-zip and extract the game correctly.</p>",
+    "created_at": "2018-04-20T23:13:37Z",
+    "author_name": "CMW039",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "3937468291",
+    "parent_id": null,
+    "thread_id": "6485008908",
+    "message": "<p>In Wine 3.9 developement and staging,happen a black screen,even if i install directx and visual c 2015 and 2010 of x64 and x86 bits.But in wine stable 3.0,with csmt .reg patch work well,with not black screen,and audio working,with internal dsound.At least that happened to me.Verify that and update if necesary,thanks.</p>",
+    "created_at": "2018-06-09T19:56:05Z",
+    "author_name": "User",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "5066356309",
+    "parent_id": null,
+    "thread_id": "6485008908",
+    "message": "<p>Want to throw in here: Not sure if it's a fault of Lutris or not (as I use that to manage my windows installed games outside of steam), but make sure you force a 32-bit prefix. For whatever reason, my prefix kept getting forced to 64-bit and that was causing a lot of issues with winetricks installing the correct libraries.</p><p>After forcing a 32-bit prefix in my Lutris config, using Lutris' lasted wine, and then installing all the libraries listed on here + LAVFilters, the game runs just fine even with MSAA on.</p>",
+    "created_at": "2020-09-11T12:47:43Z",
+    "author_name": "Reficle",
+    "author_username": null,
+    "replies": []
+  }
+]

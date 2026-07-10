@@ -1,0 +1,72 @@
+[
+  {
+    "id": "6073718666",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>Hey, I'm trying the easy install for linux (with ubuntu 22.04) using wine-staging. I get a message within the launcher when I select a folder.<br>\"Couldn't write files to this folder. Try running the launcher as admin or selecting another folder.</p><p>I tried other folder but same message. Not sure if there's an easy fix at this point but other than that, I've followed the instructions to the t and i</p>",
+    "created_at": "2022-12-24T14:32:29Z",
+    "author_name": "santi",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6082127958",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>Hey. I'm using ubuntu 22.04 with wine staging 7.22. I get the message, when I try to install the game, Can't write to that folder choose another or run as administrator. Any tip for me ;;?</p>",
+    "created_at": "2023-01-05T04:31:09Z",
+    "author_name": "s",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6217148750",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>Hello,</p><p>I have HorizonXI installed on Arch with wine-staging. I have an issue where the launcher stays open once the game boots. I do not get any sounds from the game, I just hear the launcher music. This could be multiple issues but I am trying to fix the launcher constantly staying open first. Does anyone have experience with this?</p>",
+    "created_at": "2023-06-26T14:32:26Z",
+    "author_name": "Kevin",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6217373612",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>I have the game installed on Arch linux, the game runs but there are two issues. One the launcher does not close after the game boots. Two the game has no sound (but the launcher music works fine). Any suggestions on why the launch would not close?</p>",
+    "created_at": "2023-06-26T19:26:36Z",
+    "author_name": "Kevin",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6384604069",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>HI, in the section named<br>My game is asking me to install again. What happened?</p><p>I followed all the steps, It allowed me to re-download the game. it's at 100%.<br>when I clock Play horizon, the screen flickers, but the game does not launch.</p><p>What do you think this can be?</p>",
+    "created_at": "2024-02-06T12:44:34Z",
+    "author_name": "Ricardo GDP",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6384605011",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>Hi there, in the section My game is asking me to install again. What happened?</p><p>I followed all the steps, I was able to re-download the game. When I click, play Horizon, the screen flickers, but it does not take me to the game. what should I do?</p>",
+    "created_at": "2024-02-06T12:46:24Z",
+    "author_name": "Ricardo GDP",
+    "author_username": null,
+    "replies": []
+  },
+  {
+    "id": "6466750445",
+    "parent_id": null,
+    "thread_id": "9492967856",
+    "message": "<p>can there be a shortcut to use this same install for<br>retail? id love to have same addons for my retail account</p><p>on my deck</p>",
+    "created_at": "2024-05-25T19:15:16Z",
+    "author_name": "Ben Monter",
+    "author_username": "benmonter",
+    "replies": []
+  }
+]
