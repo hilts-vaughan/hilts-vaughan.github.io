@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Games in 2024 NO. 2: Kirby and the Forgotten Land
+title: "Games in 2024 NO. 2: Kirby and the Forgotten Land"
 date: 2024-01-21 17:17 -0400
 comments: true
 

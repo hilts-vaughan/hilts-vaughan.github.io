@@ -1,21 +1,30 @@
-<nav>
-  <h1>Hi.</h1>
+<div class="site-intro">
   <a href="/">
     {% if site.data.theme.social.gravatar %}
-    <img src="http://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=200" id="gravatar" alt="My photo"/>
+    <img src="https://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=160" id="gravatar" class="site-avatar" alt="My photo"/>
     {% else %}
-    <img src="/logo.png" id="logo" alt="Blog logo"/>
+    <img src="/logo.png" id="logo" class="site-avatar" alt="Blog logo"/>
     {% endif %}
   </a>
-  <h2>I'm <a href="/">{{ site.data.theme.name }}</a>.</h2>
+
+  <div>
+    <h1><a href="/">{{ site.data.theme.name }}</a></h1>
+    <p class="site-tagline">{{ site.description }}</p>
+  </div>
+</div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <a href="/">Posts</a>
+  <a href="/about/">About</a>
+  <a href="/atom.xml">Feed</a>
+</nav>
+
+<aside class="site-bio">
   <div id="bio">
     <p>A software developer in Canada primarily interested in game development, web applications, scalable servers, and clean code design.</p>
-  
-    <p><a href="/about">Read more...</a>.</p>
   </div>
-
 
   <div id="social">
     {% include social.html %}
   </div>
-</nav>
+</aside>

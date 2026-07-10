@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.data.theme.name }} - {{ page.title }}</title>
   <meta name="author" content="{{ site.data.theme.name }}" />
-  <meta name="description" content="The blog of {{ site.data.theme.name }}" />
+  <meta name="description" content="{{ site.description }}" />
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
 
-  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="/favicon.png">
   <link rel="alternate" type="application/atom+xml" title="{{ site.data.theme.name }}" href="{{site.url}}/atom.xml" />
 
-  <link rel="stylesheet" href="/assets/css/all.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/vendor/sakura-1.5.1.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/vendor/sakura-dark-1.5.1.css" type="text/css" media="screen and (prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <div class="container">
-    <div class="four columns sidebar">
-      {% include sidebar.html %}
-    </div>
+  <header class="site-header">
+    {% include sidebar.html %}
+  </header>
 
-    <div class="eleven columns content">
-      {{ content }}
+  <main class="site-content">
+    {{ content }}
+  </main>
 
-      <div class="footer">
-        {% include footer.html %}
-      </div>
-    </div>
-  </div>
+  <footer class="site-footer">
+    {% include footer.html %}
+  </footer>
 
 {% include analytics.html %}
 </body>

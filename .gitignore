@@ -4,3 +4,5 @@ _site/
 .idea
 serve.sh
 .sass-cache/**
+.bundle/
+vendor/bundle/
