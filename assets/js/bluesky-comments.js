@@ -15,9 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes cache expiration
 
 async function loadBlueskyComments(context, container) {
+  let webUrl = context.webUrl || null;
+  const composeUrl = buildBlueskyComposeUrl(context);
+
   try {
-    const webUrl = context.webUrl || await discoverBlueskyPostUri(context);
+    webUrl = webUrl || await discoverBlueskyPostUri(context);
     if (!webUrl) {
+      if (composeUrl) {
+        updateReplyButton(composeUrl, "Start thread on Bluesky");
+        renderSeedPrompt(container, composeUrl, context);
+        return;
+      }
       throw new Error("No matching Bluesky post URI could be resolved.");
     }
     updateReplyButton(webUrl);
@@ -61,6 +69,12 @@ async function loadBlueskyComments(context, container) {
     }
   } catch (error) {
     console.error("Bluesky comments error:", error);
+    const fallbackUrl = composeUrl || webUrl;
+    if (fallbackUrl) {
+      updateReplyButton(fallbackUrl, composeUrl ? "Start thread on Bluesky" : "Reply on Bluesky");
+      renderSeedPrompt(container, fallbackUrl, context);
+      return;
+    }
     container.innerHTML = `
       <div class="bsky-error">
         <p>Failed to load comments from Bluesky.</p>
@@ -70,11 +84,50 @@ async function loadBlueskyComments(context, container) {
   }
 }
 
-function updateReplyButton(webUrl) {
+function updateReplyButton(webUrl, label) {
   const button = document.getElementById("bsky-cta-button");
   if (!button) return;
   button.href = webUrl;
+  if (label) {
+    button.textContent = label;
+  }
   button.hidden = false;
+}
+
+function buildBlueskyComposeUrl(context) {
+  if (!context) return null;
+
+  const pageTitle = context.pageTitle || document.title || "";
+  const pageUrl = context.pageUrl || window.location.href || "";
+  const authorHandle = context.author || "";
+
+  const pieces = [];
+  if (authorHandle) {
+    pieces.push(`@${authorHandle}`);
+  }
+  if (pageTitle) {
+    pieces.push(`I wanted to leave a comment on "${pageTitle}".`);
+  } else {
+    pieces.push("I wanted to leave a comment on this post.");
+  }
+  if (pageUrl) {
+    pieces.push(pageUrl);
+  }
+
+  const text = pieces.join(" ");
+  return `https://bsky.app/intent/compose?text=${encodeURIComponent(text)}`;
+}
+
+function renderSeedPrompt(container, composeUrl, context) {
+  const pageTitle = escapeHTML(context && context.pageTitle ? context.pageTitle : "this post");
+  const authorHandle = escapeHTML(context && context.author ? context.author : "the author");
+
+  container.innerHTML = `
+    <div class="bsky-error">
+      <p>No Bluesky thread exists for ${pageTitle} yet.</p>
+      <p><a href="${composeUrl}" target="_blank" rel="noopener noreferrer" class="bsky-fallback-link">Seed a new Bluesky post to ${authorHandle} with the page link.</a></p>
+    </div>
+  `;
 }
 
 async function revalidateThreadInBackground(atUri, cacheKey, container, webUrl) {
