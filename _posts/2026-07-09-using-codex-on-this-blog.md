@@ -7,7 +7,7 @@ bluesky_author_handle: "hilts-vaughan.bsky.social"
 bluesky_auto_discover: true
 ---
 
-> Disclaimer: I at work at Google and have used Antigravity and the suite of models quite extensively. However, I am quite new to the actual open source tech stack
+> Disclaimer: I work at Google and have used Antigravity and the suite of models quite extensively. However, I am quite new to the actual open source tech stack
 > outside of the so called "tech island". This is a series of posts as I explore the open source landscape and trying projects out that are outside of the typical corporate stack.
 
 The blog has not had some activity in a long time. Since I was looking to explore and check out some of the open source stacks, I figure this was as good of a place as any to start. The first order of business: let's see if we can get the site looking a little more modern. I've long since been using [sakura.css](https://github.com/oxalorg/sakura) in pretty much all of the small web applications that I build these days, so it seemed like a good fit here. The out of the box styles all look good and require almost no effort. It also works on mobile, which my current site does not.
