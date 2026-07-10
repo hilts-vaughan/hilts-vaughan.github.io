@@ -1,69 +1,74 @@
-Follow me:
-<div id="stalker">
+<p class="social-heading">Follow me</p>
+<div id="stalker" class="social-links">
   {% if site.data.theme.social.github %}
-  <a title="{{ site.data.theme.social.github }} on Github" href="https://github.com/{{ site.data.theme.social.github }}">
-    <i class="fa fa-github-square"></i>
+  <a title="{{ site.data.theme.social.github }} on Github" href="https://github.com/{{ site.data.theme.social.github }}" aria-label="{{ site.data.theme.social.github }} on Github">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.55 9.55 0 0 1 12 5.84c.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+    </svg>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.bitbucket %}
-  <a title="{{ site.data.theme.social.bitbucket }} on Bitbucket" href="https://bitbucket.com/{{ site.data.theme.social.bitbucket }}/">
-    <i class="fa fa-bitbucket-square"></i>
+  <a title="{{ site.data.theme.social.bitbucket }} on Bitbucket" href="https://bitbucket.com/{{ site.data.theme.social.bitbucket }}/" aria-label="{{ site.data.theme.social.bitbucket }} on Bitbucket">
+    <span aria-hidden="true">Bb</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.hacker_news %}
-  <a title="{{ site.data.theme.social.hacker_news }} on Hacker News" href="https://news.ycombinator.com/user?id={{site.data.theme.social.hacker_news }}">
-     <span class="fa-stack">
-      <i class="fa fa-stack-1x fa-square"></i>
-      <i class="fa fa-stack-1x fa-hn">Y</i>
-    </span>
+  <a title="{{ site.data.theme.social.hacker_news }} on Hacker News" href="https://news.ycombinator.com/user?id={{site.data.theme.social.hacker_news }}" aria-label="{{ site.data.theme.social.hacker_news }} on Hacker News">
+    <span aria-hidden="true">Y</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.stackexchange %}
-  <a title="{{ site.data.theme.name }} on Stack Exchange" href="https://stackexchange.com/users/{{site.data.theme.social.stackexchange }}">
-    <i class="fa fa-stack-exchange"></i>
+  <a title="{{ site.data.theme.name }} on Stack Exchange" href="https://stackexchange.com/users/{{site.data.theme.social.stackexchange }}" aria-label="{{ site.data.theme.name }} on Stack Exchange">
+    <span aria-hidden="true">SE</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.stackoverflow %}
-  <a title="{{ site.data.theme.name }} on Stack Overflow" href="http://stackoverflow.com/users/{{site.data.theme.social.stackoverflow }}">
-    <i class="fa fa-stack-overflow"></i>
+  <a title="{{ site.data.theme.name }} on Stack Overflow" href="http://stackoverflow.com/users/{{site.data.theme.social.stackoverflow }}" aria-label="{{ site.data.theme.name }} on Stack Overflow">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M17.9 20.2v-5.3h1.8V22H3.9v-7.1h1.8v5.3h12.2ZM7 14.3l.4-1.7 8.7 1.9-.4 1.8L7 14.3Zm1.1-4 7.9 3.7-.8 1.6-7.9-3.7.8-1.6Zm2.2-3.8 6.7 5.8-1.2 1.4-6.7-5.8 1.2-1.4Zm4.3-4.2 5.2 7.2-1.5 1.1-5.2-7.2 1.5-1.1ZM7 17.4h8.9v1.8H7v-1.8Z"/>
+    </svg>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.twitter %}
-  <a title="{{ site.data.theme.social.twitter }} on Twitter" href="https://twitter.com/{{ site.data.theme.social.twitter }}">
-    <i class="fa fa-twitter-square"></i>
+  <a title="{{ site.data.theme.social.twitter }} on Twitter" href="https://twitter.com/{{ site.data.theme.social.twitter }}" aria-label="{{ site.data.theme.social.twitter }} on Twitter">
+    <span aria-hidden="true">X</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.facebook %}
-  <a title="{{ site.data.theme.name }} on Facebook" href="https://facebook.com/{{ site.data.theme.social.facebook }}">
-    <i class="fa fa-facebook-square"></i>
+  <a title="{{ site.data.theme.name }} on Facebook" href="https://facebook.com/{{ site.data.theme.social.facebook }}" aria-label="{{ site.data.theme.name }} on Facebook">
+    <span aria-hidden="true">f</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.tumblr %}
-  <a title="{{ site.data.theme.name }} on tumblr" href="https://{{ site.data.theme.social.tumblr }}.tumblr.com">
-    <i class="fa fa-tumblr-square"></i>
+  <a title="{{ site.data.theme.name }} on tumblr" href="https://{{ site.data.theme.social.tumblr }}.tumblr.com" aria-label="{{ site.data.theme.name }} on tumblr">
+    <span aria-hidden="true">t</span>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.linkedin %}
-  <a title="{{ site.data.theme.name }} on LinkedIn" href="https://www.linkedin.com/in/{{ site.data.theme.social.linkedin }}">
-    <i class="fa fa-linkedin-square"></i>
+  <a title="{{ site.data.theme.name }} on LinkedIn" href="https://www.linkedin.com/in/{{ site.data.theme.social.linkedin }}" aria-label="{{ site.data.theme.name }} on LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6.94 8.98H3.7V20h3.24V8.98ZM5.32 4a1.88 1.88 0 1 0 0 3.76 1.88 1.88 0 0 0 0-3.76Zm14.98 9.68c0-2.96-1.58-4.34-3.7-4.34-1.7 0-2.47.94-2.9 1.6V8.98h-3.11V20h3.24v-5.45c0-1.44.27-2.84 2.06-2.84 1.76 0 1.79 1.65 1.79 2.93V20h3.24v-6.32h-.62Z"/>
+    </svg>
   </a>
   {% endif %}
 
   {% if site.data.theme.social.gplus %}
-  <a title="{{ site.data.theme.name }} on Google Plus" href="https://plus.google.com/{{ site.data.theme.social.gplus }}">
-    <i class="fa fa-google-plus-square"></i>
+  <a title="{{ site.data.theme.name }} on Google Plus" href="https://plus.google.com/{{ site.data.theme.social.gplus }}" aria-label="{{ site.data.theme.name }} on Google Plus">
+    <span aria-hidden="true">G+</span>
   </a>
   {% endif %}
 
-  <a title="Atom feed" id="atom" href="/atom.xml">
-    <i class="fa fa-rss-square"></i>
+  <a title="Atom feed" id="atom" href="/atom.xml" aria-label="Atom feed">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M5.2 16.25a2.55 2.55 0 1 1 0 5.1 2.55 2.55 0 0 1 0-5.1ZM2.65 8.9c6.85 0 12.45 5.6 12.45 12.45h-3.1c0-5.15-4.2-9.35-9.35-9.35V8.9Zm0-6.25c10.3 0 18.7 8.4 18.7 18.7h-3.1c0-8.6-7-15.6-15.6-15.6v-3.1Z"/>
+    </svg>
   </a>
 </div>
