@@ -59,6 +59,39 @@
   margin-bottom: 0;
 }
 
+.site-header,
+.site-content,
+.site-footer {
+  caret-color: transparent;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: auto;
+}
+
+a:hover {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.site-content a:focus-visible,
+.site-header a:focus-visible,
+.site-footer a:focus-visible {
+  border-bottom: 0;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  text-decoration: none;
+}
+
 .social-links {
   align-items: center;
 }
