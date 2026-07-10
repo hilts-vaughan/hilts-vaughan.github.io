@@ -1,9 +1,14 @@
 <div class="site-intro">
   <a href="/">
     {% if site.data.theme.social.gravatar %}
-    <img src="https://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=160" id="gravatar" class="site-avatar" alt="My photo"/>
+    <img
+      src="https://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=160"
+      id="gravatar"
+      class="site-avatar"
+      alt="My photo"
+    />
     {% else %}
-    <img src="/logo.png" id="logo" class="site-avatar" alt="Blog logo"/>
+    <img src="/logo.png" id="logo" class="site-avatar" alt="Blog logo" />
     {% endif %}
   </a>
 
@@ -20,11 +25,5 @@
 </nav>
 
 <aside class="site-bio">
-  <div id="bio">
-    <p>A software developer in Canada primarily interested in game development, web applications, scalable servers, and clean code design.</p>
-  </div>
-
-  <div id="social">
-    {% include social.html %}
-  </div>
+  <div id="social">{% include social.html %}</div>
 </aside>
