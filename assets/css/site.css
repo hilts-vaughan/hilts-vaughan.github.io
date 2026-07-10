@@ -179,8 +179,9 @@ a:hover {
   }
 
   .site-avatar {
-    height: 5.6rem;
-    width: 5.6rem;
+    height: auto;
+    width: auto;
+    image-rendering: crisp-edges;
   }
 
   .site-intro h1 {
