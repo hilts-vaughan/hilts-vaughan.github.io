@@ -124,8 +124,8 @@ function renderSeedPrompt(container, composeUrl, context) {
 
   container.innerHTML = `
     <div class="bsky-error">
-      <p>No Bluesky thread exists for ${pageTitle} yet.</p>
-      <p><a href="${composeUrl}" target="_blank" rel="noopener noreferrer" class="bsky-fallback-link">Seed a new Bluesky post to ${authorHandle} with the page link.</a></p>
+      <p>No Bluesky thread exists for "${pageTitle}"</p>
+      <p><a href="${composeUrl}" target="_blank" rel="noopener noreferrer" class="bsky-fallback-link">Start the conversation with ${authorHandle}</a></p>
     </div>
   `;
 }
@@ -214,6 +214,7 @@ function scoreCandidate(post, pageSignals) {
   const postText = normalizeSearchText(post.record.text || "");
   const postLinks = extractPostLinks(post);
   let score = 0;
+  let hasStrongSignal = false;
 
   for (const link of postLinks) {
     const normalizedLink = normalizeUrl(link);
@@ -226,13 +227,16 @@ function scoreCandidate(post, pageSignals) {
 
     if (matchesUrl.includes(normalizedLink)) {
       score += 1000;
+      hasStrongSignal = true;
     } else if (matchesUrl.some(candidate => normalizedLink.includes(candidate) || candidate.includes(normalizedLink))) {
       score += 850;
+      hasStrongSignal = true;
     }
   }
 
   if (pageSignals.normalizedTitle && postText.includes(pageSignals.normalizedTitle)) {
     score += 450;
+    hasStrongSignal = true;
   }
 
   if (pageSignals.titleTokens.length > 0) {
@@ -247,7 +251,7 @@ function scoreCandidate(post, pageSignals) {
 
   score += Math.min(50, (post.likeCount || 0) * 2);
 
-  if (score <= 0) return null;
+  if (!hasStrongSignal) return null;
 
   return { post, score };
 }
