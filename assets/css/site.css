@@ -72,11 +72,11 @@ textarea,
 }
 
 a {
-  font-weight: 600;
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
 }
 
 a:hover {
