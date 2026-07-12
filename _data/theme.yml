@@ -6,6 +6,7 @@ highlight_color: '#3498db'
 # Profile links on the left sidebar, leave blank to ignore
 social:
   github: hilts-vaughan
+  bluesky: hilts-vaughan.bsky.social
   #bitbucket: philipj
   #hacker_news: swanson
   #stackexchange: 348619
