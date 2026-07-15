@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Usng LLMs for ephemeral on demand software"
-date: 2026-07-11 00:00 -0200
+date: 2026-07-14 00:00 -0200
 comments: true
 bluesky_author_handle: "hilts-vaughan.bsky.social"
 bluesky_auto_discover: true
