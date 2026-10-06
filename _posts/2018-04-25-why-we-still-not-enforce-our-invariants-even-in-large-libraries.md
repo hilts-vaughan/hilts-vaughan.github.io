@@ -2,6 +2,7 @@
 layout: post
 title: Why are we still not enforcing our invariants in 2018?
 date: 2018-04-12 23:11 -0400
+published: false
 ---
 
 _This post is a work in progress; it's mostly a scratchpad for my thoughts_
@@ -56,7 +57,7 @@ I don't want this post to be too long but I do want to spell out what it means t
 
   ```javascript
   if (value < 0 || value > 100) {
-    throw new OutOfRangeError('The value given ' + value + 'was out of range');
+    throw new OutOfRangeError("The value given " + value + "was out of range");
   }
   ```
 
